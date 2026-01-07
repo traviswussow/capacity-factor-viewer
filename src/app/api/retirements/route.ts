@@ -5,14 +5,13 @@ export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
 
   const state = searchParams.get('state') || '';
-  const status = searchParams.get('status') || 'all';
   const fuelType = searchParams.get('fuelType') || '';
   const page = parseInt(searchParams.get('page') || '1');
   const limit = 50;
   const offset = (page - 1) * limit;
 
   try {
-    // First, get generators with retirement data
+    // Only get generators with planned retirement that haven't retired yet
     let query = supabase
       .from('core_eia860__scd_generators')
       .select(`
@@ -24,31 +23,27 @@ export async function GET(request: NextRequest) {
         planned_generator_retirement_date,
         generator_retirement_date
       `)
-      .order('planned_generator_retirement_date', { ascending: true, nullsFirst: false });
-
-    // Apply status filter
-    if (status === 'planned') {
-      query = query
-        .not('planned_generator_retirement_date', 'is', null)
-        .is('generator_retirement_date', null);
-    } else if (status === 'retired') {
-      query = query.not('generator_retirement_date', 'is', null);
-    } else if (status === 'operating') {
-      query = query
-        .is('planned_generator_retirement_date', null)
-        .is('generator_retirement_date', null);
-    }
+      .not('planned_generator_retirement_date', 'is', null)
+      .is('generator_retirement_date', null)
+      .order('planned_generator_retirement_date', { ascending: true });
 
     // Apply fuel type filter
     if (fuelType) {
       query = query.eq('fuel_type_code_pudl', fuelType);
     }
 
-    // Get total count for pagination (before limit)
-    const { count: totalCount } = await supabase
+    // Get total count for pagination
+    let countQuery = supabase
       .from('core_eia860__scd_generators')
       .select('*', { count: 'exact', head: true })
-      .not('planned_generator_retirement_date', 'is', null);
+      .not('planned_generator_retirement_date', 'is', null)
+      .is('generator_retirement_date', null);
+
+    if (fuelType) {
+      countQuery = countQuery.eq('fuel_type_code_pudl', fuelType);
+    }
+
+    const { count: totalCount } = await countQuery;
 
     // Apply pagination
     query = query.range(offset, offset + limit - 1);

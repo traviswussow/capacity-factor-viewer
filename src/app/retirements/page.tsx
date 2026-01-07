@@ -18,7 +18,6 @@ interface RetirementResponse {
 
 function RetirementsDashboard() {
   const [state] = useQueryState('state', parseAsString.withDefault(''));
-  const [status] = useQueryState('status', parseAsString.withDefault('planned'));
   const [fuelType] = useQueryState('fuelType', parseAsString.withDefault(''));
   const [page, setPage] = useQueryState('page', parseAsInteger.withDefault(1));
 
@@ -35,7 +34,6 @@ function RetirementsDashboard() {
       try {
         const params = new URLSearchParams({
           state,
-          status,
           fuelType,
           page: page.toString(),
         });
@@ -58,7 +56,7 @@ function RetirementsDashboard() {
     };
 
     fetchData();
-  }, [state, status, fuelType, page]);
+  }, [state, fuelType, page]);
 
   const handlePageChange = (newPage: number) => {
     setPage(newPage);
@@ -78,10 +76,10 @@ function RetirementsDashboard() {
             </Link>
           </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Power Plant Retirements
+            Planned Power Plant Retirements
           </h1>
           <p className="text-gray-600">
-            Generator-level retirement data including planned and actual closure dates
+            Generators with announced retirement dates that have not yet retired
           </p>
         </header>
 

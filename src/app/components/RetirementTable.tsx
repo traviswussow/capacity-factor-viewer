@@ -44,19 +44,22 @@ function getFuelLabel(code: string | null): string {
   return labels[code] || code;
 }
 
-function getStatusBadge(record: RetirementRecord): { text: string; color: string } {
-  if (record.generator_retirement_date) {
-    return { text: 'Retired', color: 'bg-gray-100 text-gray-800' };
+function getRetirementStatus(plannedDate: string | null): { text: string; color: string } {
+  if (!plannedDate) {
+    return { text: 'Unknown', color: 'bg-gray-100 text-gray-800' };
   }
-  if (record.planned_generator_retirement_date) {
-    const plannedDate = new Date(record.planned_generator_retirement_date);
-    const now = new Date();
-    if (plannedDate < now) {
-      return { text: 'Overdue', color: 'bg-red-100 text-red-800' };
-    }
-    return { text: 'Planned', color: 'bg-yellow-100 text-yellow-800' };
+  const date = new Date(plannedDate);
+  const now = new Date();
+  if (date < now) {
+    return { text: 'Overdue', color: 'bg-red-100 text-red-800' };
   }
-  return { text: 'Operating', color: 'bg-green-100 text-green-800' };
+  // Check if within next 2 years
+  const twoYearsOut = new Date();
+  twoYearsOut.setFullYear(twoYearsOut.getFullYear() + 2);
+  if (date <= twoYearsOut) {
+    return { text: 'Soon', color: 'bg-orange-100 text-orange-800' };
+  }
+  return { text: 'Planned', color: 'bg-blue-100 text-blue-800' };
 }
 
 export function RetirementTable({ data, loading, page, totalPages, onPageChange }: RetirementTableProps) {
@@ -112,13 +115,10 @@ export function RetirementTable({ data, loading, page, totalPages, onPageChange 
                 Capacity
               </th>
               <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Status
-              </th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Planned Retirement
               </th>
               <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Actual Retirement
+                Timeline
               </th>
               <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Extended?
@@ -127,7 +127,7 @@ export function RetirementTable({ data, loading, page, totalPages, onPageChange 
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
             {data.map((record, idx) => {
-              const status = getStatusBadge(record);
+              const timeline = getRetirementStatus(record.planned_generator_retirement_date);
               return (
                 <tr key={`${record.plant_id_eia}-${record.generator_id}-${idx}`} className="hover:bg-gray-50">
                   <td className="px-4 py-3">
@@ -150,16 +150,13 @@ export function RetirementTable({ data, loading, page, totalPages, onPageChange 
                   <td className="px-4 py-3 text-sm text-gray-900 text-right">
                     {formatCapacity(record.capacity_mw)}
                   </td>
-                  <td className="px-4 py-3">
-                    <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${status.color}`}>
-                      {status.text}
-                    </span>
-                  </td>
                   <td className="px-4 py-3 text-sm text-gray-900">
                     {formatDate(record.planned_generator_retirement_date)}
                   </td>
-                  <td className="px-4 py-3 text-sm text-gray-900">
-                    {formatDate(record.generator_retirement_date)}
+                  <td className="px-4 py-3">
+                    <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${timeline.color}`}>
+                      {timeline.text}
+                    </span>
                   </td>
                   <td className="px-4 py-3 text-center">
                     {record.extended ? (
