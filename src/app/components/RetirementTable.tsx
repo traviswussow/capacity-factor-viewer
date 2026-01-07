@@ -3,7 +3,7 @@
 import { useState, useMemo } from 'react';
 import { RetirementRecord } from '@/types';
 
-type SortColumn = 'plant_name_eia' | 'state' | 'fuel_type_code_pudl' | 'capacity_mw' | 'planned_generator_retirement_date' | 'extended';
+type SortColumn = 'plant_name_eia' | 'state' | 'fuel_type_code_pudl' | 'capacity_mw' | 'eia_retirement_date' | 'gem_retirement_date' | 'delay_months' | 'data_sources';
 type SortDirection = 'asc' | 'desc';
 
 interface RetirementTableProps {
@@ -48,6 +48,19 @@ function getFuelLabel(code: string | null): string {
   return labels[code] || code;
 }
 
+function formatDelay(months: number | null): string {
+  if (months === null || months <= 0) return '—';
+  if (months >= 12) {
+    const years = Math.floor(months / 12);
+    const remainingMonths = months % 12;
+    if (remainingMonths === 0) {
+      return `${years}y`;
+    }
+    return `${years}y ${remainingMonths}mo`;
+  }
+  return `${months}mo`;
+}
+
 function getRetirementStatus(plannedDate: string | null): { text: string; color: string } {
   if (!plannedDate) {
     return { text: 'Unknown', color: 'bg-gray-100 text-gray-800' };
@@ -75,7 +88,7 @@ function SortIcon({ direction, active }: { direction: SortDirection; active: boo
 }
 
 export function RetirementTable({ data, loading, page, totalPages, onPageChange }: RetirementTableProps) {
-  const [sortColumn, setSortColumn] = useState<SortColumn>('planned_generator_retirement_date');
+  const [sortColumn, setSortColumn] = useState<SortColumn>('gem_retirement_date');
   const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
 
   const handleSort = (column: SortColumn) => {
@@ -109,13 +122,21 @@ export function RetirementTable({ data, loading, page, totalPages, onPageChange 
           aVal = a.capacity_mw ?? 0;
           bVal = b.capacity_mw ?? 0;
           break;
-        case 'planned_generator_retirement_date':
-          aVal = a.planned_generator_retirement_date ?? '';
-          bVal = b.planned_generator_retirement_date ?? '';
+        case 'eia_retirement_date':
+          aVal = a.eia_retirement_date ?? '9999-12-31';
+          bVal = b.eia_retirement_date ?? '9999-12-31';
           break;
-        case 'extended':
-          aVal = a.extended ? 1 : 0;
-          bVal = b.extended ? 1 : 0;
+        case 'gem_retirement_date':
+          aVal = a.gem_retirement_date ?? '9999-12-31';
+          bVal = b.gem_retirement_date ?? '9999-12-31';
+          break;
+        case 'delay_months':
+          aVal = a.delay_months ?? 0;
+          bVal = b.delay_months ?? 0;
+          break;
+        case 'data_sources':
+          aVal = a.data_sources?.join(',') ?? '';
+          bVal = b.data_sources?.join(',') ?? '';
           break;
         default:
           return 0;
@@ -197,20 +218,37 @@ export function RetirementTable({ data, loading, page, totalPages, onPageChange 
               </th>
               <th
                 className={`${headerClass} text-left`}
-                onClick={() => handleSort('planned_generator_retirement_date')}
+                onClick={() => handleSort('eia_retirement_date')}
+                title="Official retirement date from EIA-860 filings"
               >
-                Planned Retirement
-                <SortIcon direction={sortDirection} active={sortColumn === 'planned_generator_retirement_date'} />
+                EIA Date
+                <SortIcon direction={sortDirection} active={sortColumn === 'eia_retirement_date'} />
+              </th>
+              <th
+                className={`${headerClass} text-left`}
+                onClick={() => handleSort('gem_retirement_date')}
+                title="Retirement date from Global Energy Monitor research"
+              >
+                GEM Date
+                <SortIcon direction={sortDirection} active={sortColumn === 'gem_retirement_date'} />
+              </th>
+              <th
+                className={`${headerClass} text-center`}
+                onClick={() => handleSort('delay_months')}
+                title="Delay between EIA and GEM dates"
+              >
+                Delay
+                <SortIcon direction={sortDirection} active={sortColumn === 'delay_months'} />
               </th>
               <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Timeline
               </th>
               <th
                 className={`${headerClass} text-center`}
-                onClick={() => handleSort('extended')}
+                onClick={() => handleSort('data_sources')}
               >
-                Extended?
-                <SortIcon direction={sortDirection} active={sortColumn === 'extended'} />
+                Sources
+                <SortIcon direction={sortDirection} active={sortColumn === 'data_sources'} />
               </th>
             </tr>
           </thead>
@@ -240,7 +278,38 @@ export function RetirementTable({ data, loading, page, totalPages, onPageChange 
                     {formatCapacity(record.capacity_mw)}
                   </td>
                   <td className="px-4 py-3 text-sm text-gray-900">
-                    {formatDate(record.planned_generator_retirement_date)}
+                    {record.eia_retirement_date ? formatDate(record.eia_retirement_date) : (
+                      <span className="text-gray-400">—</span>
+                    )}
+                  </td>
+                  <td className="px-4 py-3 text-sm text-gray-900">
+                    {record.gem_retirement_date ? formatDate(record.gem_retirement_date) : (
+                      <span className="text-gray-400">—</span>
+                    )}
+                  </td>
+                  <td className="px-4 py-3 text-center">
+                    {record.indefinite_delay ? (
+                      <span className="inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full bg-red-100 text-red-800" title={`Originally ${record.original_planned_year}`}>
+                        Indefinite
+                      </span>
+                    ) : record.doe_202c_order ? (
+                      <span className="inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-800" title="DOE Section 202(c) emergency order">
+                        DOE 202(c)
+                      </span>
+                    ) : record.delay_years && record.delay_years > 0 ? (
+                      <div>
+                        <span className="inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full bg-orange-100 text-orange-800">
+                          +{record.delay_years}y
+                        </span>
+                        {record.original_planned_year && record.revised_planned_year && (
+                          <div className="text-xs text-gray-500 mt-1">
+                            {record.original_planned_year}→{record.revised_planned_year}
+                          </div>
+                        )}
+                      </div>
+                    ) : (
+                      <span className="text-gray-400">—</span>
+                    )}
                   </td>
                   <td className="px-4 py-3">
                     <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${timeline.color}`}>
@@ -248,20 +317,23 @@ export function RetirementTable({ data, loading, page, totalPages, onPageChange 
                     </span>
                   </td>
                   <td className="px-4 py-3 text-center">
-                    {record.extended ? (
-                      <div>
-                        <span className="inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full bg-orange-100 text-orange-800">
-                          Delayed
+                    <div className="flex gap-1 justify-center flex-wrap">
+                      {record.data_sources?.includes('eia') && (
+                        <span className="inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full bg-gray-100 text-gray-600" title="Data from EIA-860">
+                          EIA
                         </span>
-                        {record.original_retirement_date && (
-                          <div className="text-xs text-gray-500 mt-1">
-                            Was: {formatDate(record.original_retirement_date)}
-                          </div>
-                        )}
-                      </div>
-                    ) : (
-                      <span className="text-gray-400">—</span>
-                    )}
+                      )}
+                      {record.data_sources?.includes('gem') && (
+                        <span className="inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full bg-purple-100 text-purple-800" title="Data from Global Energy Monitor">
+                          GEM
+                        </span>
+                      )}
+                      {record.data_sources?.includes('manual') && (
+                        <span className="inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full bg-green-100 text-green-800" title="Manual delay data from news/utility sources">
+                          PDF
+                        </span>
+                      )}
+                    </div>
                   </td>
                 </tr>
               );

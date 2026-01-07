@@ -4,7 +4,9 @@ import {
   MIN_YEAR,
   MAX_YEAR,
   SIMPLE_CYCLE_CODES,
-  COMBINED_CYCLE_CODES
+  COMBINED_CYCLE_CODES,
+  SEASON_MONTHS,
+  type Season,
 } from '@/types';
 
 // Valid region codes
@@ -14,7 +16,7 @@ const VALID_REGIONS: Set<string> = new Set(REGIONS.map(r => r.value));
 const VALID_FUEL_TYPES: Set<string> = new Set(FUEL_TYPES.map(f => f.value));
 
 // Valid seasons
-const VALID_SEASONS: Set<string> = new Set(['annual', 'summer', 'winter']);
+const VALID_SEASONS: Set<string> = new Set(['annual', 'winter', 'spring', 'summer', 'fall']);
 
 // Valid technology filters
 const VALID_TECHNOLOGIES: Set<string> = new Set(['all', 'simple_cycle', 'combined_cycle']);
@@ -40,11 +42,11 @@ export function validateYear(year: number | null): number {
   return Math.floor(year);
 }
 
-export function validateSeason(season: string | null): 'annual' | 'summer' | 'winter' {
+export function validateSeason(season: string | null): Season {
   if (!season || !VALID_SEASONS.has(season)) {
     return 'annual';
   }
-  return season as 'annual' | 'summer' | 'winter';
+  return season as Season;
 }
 
 export function validateTechnology(tech: string | null): 'all' | 'simple_cycle' | 'combined_cycle' {
@@ -68,16 +70,8 @@ export function getPrimeMoverCodes(technology: 'all' | 'simple_cycle' | 'combine
 }
 
 // Get month numbers for season filter
-export function getSeasonMonths(season: 'annual' | 'summer' | 'winter'): number[] {
-  switch (season) {
-    case 'summer':
-      return [6, 7, 8];
-    case 'winter':
-      return [12, 1, 2];
-    case 'annual':
-    default:
-      return [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-  }
+export function getSeasonMonths(season: Season): number[] {
+  return [...SEASON_MONTHS[season]];
 }
 
 // Validate and sanitize all filter params
@@ -85,7 +79,7 @@ export interface ValidatedFilters {
   region: string;
   fuelType: string;
   year: number;
-  season: 'annual' | 'summer' | 'winter';
+  season: Season;
   technology: 'all' | 'simple_cycle' | 'combined_cycle';
 }
 

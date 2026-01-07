@@ -85,8 +85,10 @@ export function FilterPanel() {
             className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-gray-900"
           >
             <option value="annual">Annual</option>
-            <option value="summer">Summer (Jun-Aug)</option>
             <option value="winter">Winter (Dec-Feb)</option>
+            <option value="spring">Spring (Mar-May)</option>
+            <option value="summer">Summer (Jun-Aug)</option>
+            <option value="fall">Fall (Sep-Nov)</option>
           </select>
         </div>
 

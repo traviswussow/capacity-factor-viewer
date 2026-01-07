@@ -1,0 +1,270 @@
+plant_name,plant_slug,unit_name,state,county,status,fuel_type,capacity_mw,technology,start_year,planned_retirement_year,retired_year
+"A. B. Brown power station","A._B._Brown_Generating_Station","Unit 1",IN,Posey,"Retired&#91;2&#93;","coal: bituminous",265.2,subcritical,1979,,2023
+"A. B. Brown power station","A._B._Brown_Generating_Station","Unit 2",IN,Posey,"Retired&#91;2&#93;","coal: bituminous",265.2,subcritical,1986,,2023
+"A. B. Brown power station","A._B._Brown_Generating_Station","Unit 4",IN,Posey,"Operating&#91;3&#93;","fossil gas: natural gas, fossil liquids: fuel oil&#91;4&#93;",88,gas turbine&#91;3&#93;,1991,,
+"A. B. Brown power station","A._B._Brown_Generating_Station","Unit 5",IN,Posey,"Operating&#91;3&#93;","fossil gas: natural gas&#91;3&#93;",88,gas turbine&#91;3&#93;,2002,,
+"A. B. Brown power station","A._B._Brown_Generating_Station","Unit 6",IN,Posey,"Construction&#91;1&#93;&#91;5&#93;&#91;6&#93;&#91;7&#93;&#91;8&#93;","fossil gas: natural gas&#91;9&#93;&#91;10&#93;",248,gas turbine&#91;9&#93;&#91;10&#93;,2025,,
+"A. B. Brown power station","A._B._Brown_Generating_Station","Unit 7",IN,Posey,"Construction&#91;1&#93;&#91;5&#93;&#91;6&#93;&#91;7&#93;&#91;8&#93;","fossil gas: natural gas&#91;9&#93;&#91;10&#93;",248,gas turbine&#91;9&#93;&#91;10&#93;,2025,,
+"Antelope Valley Station","Antelope_Valley_Station","Unit 1",ND,Mercer,"Operating","coal: lignite",434.9,subcritical,1984,,
+"Antelope Valley Station","Antelope_Valley_Station","Unit 2",ND,Mercer,"Operating","coal: lignite",434.9,subcritical,1986,,
+"Baldwin Energy Station","Baldwin_Energy_Complex","Unit 1",IL,Randolph,"Operating","coal: subbituminous",625.1,subcritical,1970,2027,
+"Baldwin Energy Station","Baldwin_Energy_Complex","Unit 2",IL,Randolph,"Operating","coal: subbituminous",634.5,subcritical,1973,2027,
+"Baldwin Energy Station","Baldwin_Energy_Complex","Unit 3",IL,Randolph,"Retired","coal: subbituminous",634.5,subcritical,1975,,2019
+"Barry Steam Plant","Barry_Steam_Plant","G521",AL,Mobile,"Operating&#91;1&#93;","fossil gas: natural gas&#91;1&#93;",535,combined cycle&#91;1&#93;,2000,,
+"Barry Steam Plant","Barry_Steam_Plant","G522",AL,Mobile,"Operating&#91;1&#93;","fossil gas: natural gas&#91;1&#93;",535,combined cycle&#91;1&#93;,2000,,
+"Barry Steam Plant","Barry_Steam_Plant","G523",AL,Mobile,"Operating&#91;3&#93;&#91;2&#93;&#91;4&#93;&#91;5&#93;&#91;6&#93;","fossil gas: natural gas&#91;7&#93;",774,combined cycle&#91;7&#93;,2023,,
+"Barry Steam Plant","Barry_Steam_Plant","Unit 1, timepoint 1",AL,Mobile,"Retired","coal: bituminous",153.1,subcritical,1954,,2015
+"Barry Steam Plant","Barry_Steam_Plant","Unit 1, timepoint 2",AL,Mobile,"Operating&#91;1&#93;","fossil gas: natural gas&#91;1&#93;",153.1,steam turbine&#91;1&#93;,2015,,
+"Barry Steam Plant","Barry_Steam_Plant","Unit 2, timepoint 1",AL,Mobile,"Retired","coal: bituminous",153.1,subcritical,1954,,2015
+"Barry Steam Plant","Barry_Steam_Plant","Unit 2, timepoint 2",AL,Mobile,"Operating&#91;1&#93;","fossil gas: natural gas&#91;1&#93;",153.1,steam turbine&#91;1&#93;,2015,,
+"Barry Steam Plant","Barry_Steam_Plant","Unit 3",AL,Mobile,"Retired","coal: bituminous",272,subcritical,1959,,2015
+"Barry Steam Plant","Barry_Steam_Plant","Unit 4, timepoint 1",AL,Mobile,"Retired&#91;10&#93;","coal: bituminous",403.7,subcritical,1969,,2022
+"Barry Steam Plant","Barry_Steam_Plant","Unit 4, timepoint 2",AL,Mobile,"Operating&#91;12&#93;&#91;11&#93;&#91;13&#93;","fossil gas: natural gas&#91;10&#93;",403.7,steam turbine&#91;14&#93;,2022,,
+"Barry Steam Plant","Barry_Steam_Plant","Unit 5",AL,Mobile,"Operating","coal: bituminous",788.8,supercritical,1971,2028,
+"Belews Creek Steam Station","Belews_Creek_Steam_Station","Unit 1",NC,Stokes,"Operating","coal: bituminous, fossil gas: natural gas&#91;1&#93;",1080,supercritical,1974,2040,
+"Belews Creek Steam Station","Belews_Creek_Steam_Station","Unit 2",NC,Stokes,"Operating","coal: bituminous, fossil gas: natural gas&#91;1&#93;",1080,supercritical,1975,2040,
+"Belle River Power Plant","Belle_River_Power_Plant","12-1",MI,St Clair,"Operating&#91;1&#93;","fossil gas: natural gas&#91;1&#93;",85,gas turbine&#91;1&#93;,1999,,
+"Belle River Power Plant","Belle_River_Power_Plant","12-2",MI,St Clair,"Operating&#91;1&#93;","fossil gas: natural gas&#91;1&#93;",85,gas turbine&#91;1&#93;,1999,,
+"Belle River Power Plant","Belle_River_Power_Plant","13-1",MI,St Clair,"Operating&#91;1&#93;","fossil gas: natural gas&#91;1&#93;",85,gas turbine&#91;1&#93;,1999,,
+"Belle River Power Plant","Belle_River_Power_Plant","Unit 1, timepoint 1",MI,St Clair,"Operating","coal: subbituminous",697.5,subcritical,1984,2025,
+"Belle River Power Plant","Belle_River_Power_Plant","Unit 1, timepoint 2",MI,St Clair,"Pre-construction&#91;2&#93;&#91;4&#93;&#91;5&#93;&#91;6&#93;","fossil gas: natural gas&#91;2&#93;",697.5,steam turbine&#91;7&#93;,2025,,
+"Belle River Power Plant","Belle_River_Power_Plant","Unit 2, timepoint 1",MI,St Clair,"Operating","coal: subbituminous",697.5,subcritical,1985,2026,
+"Belle River Power Plant","Belle_River_Power_Plant","Unit 2, timepoint 2",MI,St Clair,"Pre-construction&#91;2&#93;&#91;4&#93;&#91;5&#93;&#91;6&#93;","fossil gas: natural gas&#91;2&#93;",697.5,steam turbine&#91;7&#93;,2025,,
+"Big Brown Steam Electric Station","Big_Brown_Steam_Electric_Station","Unit 1",TX,Freestone,"Retired","coal: lignite",593.4,supercritical,1971,,2018
+"Big Brown Steam Electric Station","Big_Brown_Steam_Electric_Station","Unit 2",TX,Freestone,"Retired","coal: lignite",593.4,supercritical,1972,,2018
+"Bull Run Fossil Plant","Bull_Run_Fossil_Plant","Unit 1",TN,Anderson,"Retired&#91;1&#93;","coal: bituminous",950,supercritical,1967,,2023
+"Cayuga Generating Station","Cayuga_Generating_Station","4",IN,Vermillion,"Operating&#91;1&#93;","fossil liquids: fuel oil, fossil gas: natural gas&#91;2&#93;",113,gas turbine&#91;1&#93;,1993,,
+"Cayuga Generating Station","Cayuga_Generating_Station","Unit 1",IN,Vermillion,"Operating","coal: bituminous",531,subcritical,1970,2029,
+"Cayuga Generating Station","Cayuga_Generating_Station","Unit 1R",IN,Vermillion,"Announced&#91;3&#93;&#91;4&#93;","fossil gas: natural gas&#91;4&#93;",719,combined cycle&#91;4&#93;,2030,,
+"Cayuga Generating Station","Cayuga_Generating_Station","Unit 2",IN,Vermillion,"Operating","coal: bituminous",531,subcritical,1972,2030,
+"Cayuga Generating Station","Cayuga_Generating_Station","Unit 2R",IN,Vermillion,"Announced&#91;3&#93;&#91;4&#93;","fossil gas: natural gas&#91;4&#93;",719,combined cycle&#91;4&#93;,2031,,
+"Cholla Generating Station","Cholla_Power_Plant","Unit 1",AZ,Navajo,"Retired&#91;1&#93;","coal: bituminous",113.6,subcritical,1962,,2025
+"Cholla Generating Station","Cholla_Power_Plant","Unit 2",AZ,Navajo,"Retired","coal: bituminous",288.9,subcritical,1978,,2015
+"Cholla Generating Station","Cholla_Power_Plant","Unit 3",AZ,Navajo,"Retired&#91;1&#93;","coal: bituminous",312.3,subcritical,1980,,2025
+"Cholla Generating Station","Cholla_Power_Plant","Unit 4",AZ,Navajo,"Retired","coal: bituminous",414,subcritical,1981,,2020
+"Coal Creek Station","Coal_Creek_Station","Unit 1",ND,McLean,"Operating","coal: lignite",605,subcritical,1979,,
+"Coal Creek Station","Coal_Creek_Station","Unit 2",ND,McLean,"Operating","coal: lignite",605,subcritical,1980,,
+"Columbia Energy Center","Columbia_Energy_Center","Unit 1",WI,Columbia,"Operating","coal: subbituminous",556,subcritical,1975,2029,
+"Columbia Energy Center","Columbia_Energy_Center","Unit 2",WI,Columbia,"Operating","coal: subbituminous",556,subcritical,1978,2029,
+"Comanche power station","Comanche_Generating_Station","Unit 1",CO,,"Retired&#91;1&#93;","coal: subbituminous",382.5,subcritical,1973,,2022
+"Comanche power station","Comanche_Generating_Station","Unit 2",CO,,"Operating","coal: subbituminous",396,subcritical,1975,2026,
+"Comanche power station","Comanche_Generating_Station","Unit 3",CO,,"Operating","coal: subbituminous",856.8,supercritical,2010,2030,
+"Conemaugh Generating Station","Conemaugh_Generating_Station","Unit 1",PA,Indiana,"Operating","coal: bituminous",936,supercritical,1970,2028,
+"Conemaugh Generating Station","Conemaugh_Generating_Station","Unit 2",PA,Indiana,"Operating","coal: bituminous",936,supercritical,1971,2028,
+"Conesville Power Plant","Conesville_Power_Plant","Unit 1",OH,Coshocton,"Retired","coal: bituminous",148,subcritical,1959,,2005
+"Conesville Power Plant","Conesville_Power_Plant","Unit 2",OH,Coshocton,"Retired","coal: bituminous",136,subcritical,1957,,2005
+"Conesville Power Plant","Conesville_Power_Plant","Unit 3",OH,Coshocton,"Retired","coal: bituminous",161.5,subcritical,1962,,2012
+"Conesville Power Plant","Conesville_Power_Plant","Unit 4",OH,Coshocton,"Retired","coal: bituminous",841.5,supercritical,1973,,2020
+"Conesville Power Plant","Conesville_Power_Plant","Unit 5",OH,Coshocton,"Retired","coal: bituminous",443.9,subcritical,1976,,2019
+"Conesville Power Plant","Conesville_Power_Plant","Unit 6",OH,Coshocton,"Retired","coal: bituminous",443.9,subcritical,1978,,2019
+"Coronado Generating Station","Coronado_Generating_Station","Unit 1, timepoint 1",AZ,Apache,"Operating","coal: subbituminous",410.9,subcritical,1979,2029,
+"Coronado Generating Station","Coronado_Generating_Station","Unit 1, timepoint 2",AZ,Apache,"Announced&#91;2&#93;&#91;3&#93;&#91;1&#93;","fossil gas: natural gas&#91;2&#93;&#91;3&#93;&#91;1&#93;",410.9,steam turbine&#91;4&#93;,2029,,
+"Coronado Generating Station","Coronado_Generating_Station","Unit 2, timepoint 1",AZ,Apache,"Operating","coal: subbituminous",410.9,subcritical,1980,2029,
+"Coronado Generating Station","Coronado_Generating_Station","Unit 2, timepoint 2",AZ,Apache,"Announced&#91;2&#93;&#91;3&#93;&#91;1&#93;","fossil gas: natural gas&#91;2&#93;&#91;3&#93;&#91;1&#93;",410.9,steam turbine&#91;4&#93;,2029,,
+"Walter Scott Jr. power station","Council_Bluffs_Energy_Center","Unit 1",IA,Pottawattamie,"Retired","coal: subbituminous",49,subcritical,1954,,2015
+"Walter Scott Jr. power station","Council_Bluffs_Energy_Center","Unit 2",IA,Pottawattamie,"Retired","coal: subbituminous",81.6,subcritical,1958,,2015
+"Walter Scott Jr. power station","Council_Bluffs_Energy_Center","Unit 3",IA,Pottawattamie,"Operating","coal: subbituminous",725.8,subcritical,1978,,
+"Walter Scott Jr. power station","Council_Bluffs_Energy_Center","Unit 4",IA,Pottawattamie,"Operating","coal: subbituminous",922.5,supercritical,2007,,
+"Crystal River Energy Complex","Crystal_River_Energy_Complex","CC1",FL,Citrus,"Operating&#91;1&#93;","fossil gas: natural gas&#91;1&#93;",985,combined cycle&#91;1&#93;,2018,,
+"Crystal River Energy Complex","Crystal_River_Energy_Complex","CC2",FL,Citrus,"Operating&#91;1&#93;","fossil gas: natural gas&#91;1&#93;",985,combined cycle&#91;1&#93;,2018,,
+"Crystal River Energy Complex","Crystal_River_Energy_Complex","Unit 1",FL,Citrus,"Retired","coal: bituminous",440.5,subcritical,1966,,2018
+"Crystal River Energy Complex","Crystal_River_Energy_Complex","Unit 2",FL,Citrus,"Retired","coal: bituminous",523.8,subcritical,1969,,2018
+"Crystal River Energy Complex","Crystal_River_Energy_Complex","Unit 4",FL,Citrus,"Operating","coal: bituminous",739.2,subcritical,1982,2034,
+"Crystal River Energy Complex","Crystal_River_Energy_Complex","Unit 5",FL,Citrus,"Operating","coal: bituminous",739.2,subcritical,1984,2034,
+"Cumberland Steam Plant","Cumberland_Fossil_Plant","CC1",TN,Stewart,"Construction&#91;2&#93;&#91;3&#93;&#91;4&#93;&#91;5&#93;&#91;6&#93;&#91;7&#93;&#91;8&#93;","fossil gas: natural gas&#91;6&#93;&#91;5&#93;&#91;7&#93;",777.8,combined cycle&#91;2&#93;&#91;7&#93;&#91;8&#93;&#91;6&#93;,2026,,
+"Cumberland Steam Plant","Cumberland_Fossil_Plant","CC2",TN,Stewart,"Construction&#91;2&#93;&#91;3&#93;&#91;4&#93;&#91;5&#93;&#91;6&#93;&#91;7&#93;&#91;8&#93;","fossil gas: natural gas&#91;6&#93;&#91;5&#93;&#91;7&#93;",777.8,combined cycle&#91;2&#93;&#91;7&#93;&#91;8&#93;&#91;6&#93;,2029,,
+"Cumberland Steam Plant","Cumberland_Fossil_Plant","Unit 1",TN,Stewart,"Operating","coal: bituminous",1300,supercritical,1973,2026,
+"Cumberland Steam Plant","Cumberland_Fossil_Plant","Unit 2",TN,Stewart,"Operating","coal: bituminous",1300,supercritical,1973,2028,
+"Dave Johnston Power Plant","Dave_Johnston_Power_Plant","Unit 1, timepoint 1",WY,Converse,"Operating","coal: subbituminous",113.6,subcritical,1959,2029,
+"Dave Johnston Power Plant","Dave_Johnston_Power_Plant","Unit 1, timepoint 2",WY,Converse,"Announced&#91;2&#93;&#91;3&#93;","fossil gas: natural gas&#91;2&#93;&#91;4&#93;&#91;3&#93;",113.6,steam turbine&#91;5&#93;,2029,,
+"Dave Johnston Power Plant","Dave_Johnston_Power_Plant","Unit 2, timepoint 1",WY,Converse,"Operating","coal: subbituminous",113.6,subcritical,1961,2029,
+"Dave Johnston Power Plant","Dave_Johnston_Power_Plant","Unit 2, timepoint 2",WY,Converse,"Announced&#91;2&#93;&#91;4&#93;&#91;3&#93;","fossil gas: natural gas&#91;2&#93;&#91;4&#93;&#91;3&#93;",113.6,steam turbine&#91;5&#93;,2029,,
+"Dave Johnston Power Plant","Dave_Johnston_Power_Plant","Unit 3",WY,Converse,"Operating","coal: subbituminous",229.5,subcritical,1964,2027,
+"Dave Johnston Power Plant","Dave_Johnston_Power_Plant","Unit 4, timepoint 1",WY,Converse,"Operating","coal: subbituminous",360,subcritical,1972,2030,
+"Dave Johnston Power Plant","Dave_Johnston_Power_Plant","Unit 4, timepoint 2",WY,Converse,"Announced&#91;3&#93;","fossil gas: natural gas&#91;3&#93;",360,steam turbine&#91;5&#93;,2030,,
+"Elm Road power station","Elm_Road_Generating_Station","Unit 1, timepoint 1",WI,,"Operating","coal: unknown",701.3,supercritical,2010,2028,
+"Elm Road power station","Elm_Road_Generating_Station","Unit 1, timepoint 2",WI,,"Announced&#91;3&#93;&#91;4&#93;&#91;5&#93;&#91;6&#93;","fossil gas: natural gas&#91;4&#93;",701.3,steam turbine&#91;1&#93;&#91;2&#93;,2029,,
+"Elm Road power station","Elm_Road_Generating_Station","Unit 2, timepoint 1",WI,,"Operating","coal: bituminous",701.3,supercritical,2011,2028,
+"Elm Road power station","Elm_Road_Generating_Station","Unit 2, timepoint 2",WI,,"Announced&#91;4&#93;&#91;5&#93;&#91;6&#93;&#91;10&#93;&#91;3&#93;","fossil gas: natural gas&#91;4&#93;",701.3,steam turbine&#91;1&#93;&#91;2&#93;,2029,,
+"Fayette Power Project","Fayette_Power_Project","Unit 1",TX,Fayette,"Operating","coal: subbituminous",615,subcritical,1979,,
+"Fayette Power Project","Fayette_Power_Project","Unit 2",TX,Fayette,"Operating","coal: subbituminous",615,subcritical,1980,,
+"Fayette Power Project","Fayette_Power_Project","Unit 3",TX,Fayette,"Operating","coal: lignite",460,subcritical,1988,,
+"Fort Martin power station","Fort_Martin_Power_Station","3",WV,Monongalia,"Announced&#91;1&#93;","fossil gas: natural gas&#91;1&#93;",2000,unknown,2035,,
+"Fort Martin power station","Fort_Martin_Power_Station","Unit 1",WV,Monongalia,"Operating","coal: bituminous",576,supercritical,1967,2035,
+"Fort Martin power station","Fort_Martin_Power_Station","Unit 2",WV,Monongalia,"Operating","coal: bituminous",576,supercritical,1968,2035,
+"Four Corners Steam Plant","Four_Corners_Generating_Station","Unit 1",NM,San Juan,"Retired","coal: subbituminous",190.1,subcritical,1963,,2013
+"Four Corners Steam Plant","Four_Corners_Generating_Station","Unit 2",NM,San Juan,"Retired","coal: subbituminous",190.1,subcritical,1963,,2013
+"Four Corners Steam Plant","Four_Corners_Generating_Station","Unit 3",NM,San Juan,"Retired","coal: subbituminous",253.4,subcritical,1964,,2013
+"Four Corners Steam Plant","Four_Corners_Generating_Station","Unit 4",NM,San Juan,"Operating","coal: subbituminous",818.1,supercritical,1969,2038,
+"Four Corners Steam Plant","Four_Corners_Generating_Station","Unit 5",NM,San Juan,"Operating","coal: subbituminous",818.1,supercritical,1970,2038,
+"Gallagher Generating Station","Gallagher_Generating_Station","Unit 1",IN,Floyd,"Retired","coal: bituminous",150,subcritical,1959,,2012
+"Gallagher Generating Station","Gallagher_Generating_Station","Unit 2",IN,Floyd,"Retired","coal: bituminous",150,subcritical,1958,,2021
+"Gallagher Generating Station","Gallagher_Generating_Station","Unit 3",IN,Floyd,"Retired","coal: bituminous",150,subcritical,1960,,2012
+"Gallagher Generating Station","Gallagher_Generating_Station","Unit 4",IN,Floyd,"Retired","coal: bituminous",150,subcritical,1961,,2021
+"Gallatin Fossil Plant","Gallatin_Fossil_Plant","GT1",TN,Sumner,"Operating&#91;1&#93;","fossil gas: natural gas, fossil liquids: fuel oil&#91;2&#93;",81,gas turbine&#91;1&#93;,1975,2031,
+"Gallatin Fossil Plant","Gallatin_Fossil_Plant","GT2",TN,Sumner,"Operating&#91;1&#93;","fossil gas: natural gas, fossil liquids: fuel oil&#91;2&#93;",81,gas turbine&#91;1&#93;,1975,2031,
+"Gallatin Fossil Plant","Gallatin_Fossil_Plant","GT3",TN,Sumner,"Operating&#91;1&#93;","fossil gas: natural gas, fossil liquids: fuel oil&#91;2&#93;",81,gas turbine&#91;1&#93;,1975,2031,
+"Gallatin Fossil Plant","Gallatin_Fossil_Plant","GT4",TN,Sumner,"Operating&#91;1&#93;","fossil gas: natural gas, fossil liquids: fuel oil&#91;2&#93;",81,gas turbine&#91;1&#93;,1975,2031,
+"Gallatin Fossil Plant","Gallatin_Fossil_Plant","GT5",TN,Sumner,"Operating&#91;1&#93;","fossil gas: natural gas, fossil liquids: fuel oil&#91;2&#93;",85,gas turbine&#91;1&#93;,2000,2031,
+"Gallatin Fossil Plant","Gallatin_Fossil_Plant","GT6",TN,Sumner,"Operating&#91;1&#93;","fossil gas: natural gas, fossil liquids: fuel oil&#91;2&#93;",85,gas turbine&#91;1&#93;,2000,2031,
+"Gallatin Fossil Plant","Gallatin_Fossil_Plant","GT7",TN,Sumner,"Operating&#91;1&#93;","fossil gas: natural gas, fossil liquids: fuel oil&#91;2&#93;",85,gas turbine&#91;1&#93;,2000,2031,
+"Gallatin Fossil Plant","Gallatin_Fossil_Plant","GT8",TN,Sumner,"Operating&#91;1&#93;","fossil gas: natural gas, fossil liquids: fuel oil&#91;2&#93;",85,gas turbine&#91;1&#93;,2000,2031,
+"Gallatin Fossil Plant","Gallatin_Fossil_Plant","Unit 1",TN,Sumner,"Operating","coal: bituminous",300,subcritical,1956,2035,
+"Gallatin Fossil Plant","Gallatin_Fossil_Plant","Unit 2",TN,Sumner,"Operating","coal: bituminous",300,subcritical,1957,2035,
+"Gallatin Fossil Plant","Gallatin_Fossil_Plant","Unit 3",TN,Sumner,"Operating","coal: bituminous",327.6,subcritical,1959,2035,
+"Gallatin Fossil Plant","Gallatin_Fossil_Plant","Unit 4",TN,Sumner,"Operating","coal: bituminous",327.6,subcritical,1959,2035,
+"Gaston Steam Plant","Gaston_Steam_Plant","Unit 1, timepoint 1",AL,Shelby,"Retired","coal: bituminous",272,subcritical,1960,,2016
+"Gaston Steam Plant","Gaston_Steam_Plant","Unit 1, timepoint 2",AL,Shelby,"Operating&#91;2&#93;&#91;1&#93;","fossil gas: natural gas, coal: unknown&#91;3&#93;&#91;4&#93;",272,steam turbine&#91;2&#93;,2016,2034,
+"Gaston Steam Plant","Gaston_Steam_Plant","Unit 2, timepoint 1",AL,Shelby,"Retired","coal: bituminous",272,subcritical,1960,,2016
+"Gaston Steam Plant","Gaston_Steam_Plant","Unit 2, timepoint 2",AL,Shelby,"Operating&#91;2&#93;&#91;1&#93;","fossil gas: natural gas, coal: unknown&#91;3&#93;&#91;4&#93;",272,steam turbine&#91;2&#93;,2016,2034,
+"Gaston Steam Plant","Gaston_Steam_Plant","Unit 3, timepoint 1",AL,Shelby,"Retired","coal: bituminous",272,subcritical,1961,,2016
+"Gaston Steam Plant","Gaston_Steam_Plant","Unit 3, timepoint 2",AL,Shelby,"Operating&#91;2&#93;&#91;1&#93;","fossil gas: natural gas, coal: unknown&#91;3&#93;&#91;4&#93;",272,steam turbine&#91;2&#93;,2016,2034,
+"Gaston Steam Plant","Gaston_Steam_Plant","Unit 4, timepoint 1",AL,Shelby,"Retired","coal: bituminous",244.8,subcritical,1962,,2016
+"Gaston Steam Plant","Gaston_Steam_Plant","Unit 4, timepoint 2",AL,Shelby,"Operating&#91;2&#93;&#91;1&#93;","fossil gas: natural gas, coal: unknown&#91;3&#93;&#91;4&#93;",244.8,steam turbine&#91;2&#93;,2016,2034,
+"Gaston Steam Plant","Gaston_Steam_Plant","Unit 5, timepoint 1",AL,Shelby,"Operating","coal: bituminous, fossil gas: natural gas&#91;7&#93;",952,supercritical,1974,2028,
+"Gaston Steam Plant","Gaston_Steam_Plant","Unit 5, timepoint 2",AL,Shelby,"Pre-construction&#91;9&#93;&#91;6&#93;&#91;10&#93;","fossil gas: natural gas&#91;10&#93;&#91;9&#93;&#91;6&#93;",952,steam turbine&#91;8&#93;,2028,,
+"Gerald Gentleman Station","Gerald_Gentleman_Station","Unit 1",NE,Lincoln,"Operating","coal: subbituminous",681.3,subcritical,1979,,
+"Gerald Gentleman Station","Gerald_Gentleman_Station","Unit 2",NE,Lincoln,"Operating","coal: subbituminous",681.3,subcritical,1982,,
+"Ghent Generating Station","Ghent_Generating_Station","Unit 1",KY,Carroll,"Operating","coal: bituminous",556.9,subcritical,1974,,
+"Ghent Generating Station","Ghent_Generating_Station","Unit 2",KY,Carroll,"Operating","coal: bituminous",556.3,subcritical,1977,,
+"Ghent Generating Station","Ghent_Generating_Station","Unit 3",KY,Carroll,"Operating","coal: bituminous",556.5,subcritical,1981,,
+"Ghent Generating Station","Ghent_Generating_Station","Unit 4",KY,Carroll,"Operating","coal: bituminous",556.2,subcritical,1984,,
+"Gibson Generating Station","Gibson_Generating_Station","Unit 1",IN,Gibson,"Operating","coal: bituminous",667.9,supercritical,1975,2038,
+"Gibson Generating Station","Gibson_Generating_Station","Unit 2",IN,Gibson,"Operating","coal: bituminous",667.9,supercritical,1975,2038,
+"Gibson Generating Station","Gibson_Generating_Station","Unit 3",IN,Gibson,"Operating","coal: bituminous",667.9,supercritical,1978,2031,
+"Gibson Generating Station","Gibson_Generating_Station","Unit 4",IN,Gibson,"Operating","coal: bituminous",667.9,supercritical,1979,2031,
+"Gibson Generating Station","Gibson_Generating_Station","Unit 5",IN,Gibson,"Operating","coal: bituminous",667.9,supercritical,1982,2030,
+"Gibson Generating Station","Gibson_Generating_Station","Unit 6",IN,Gibson,"Announced&#91;2&#93;","fossil gas: natural gas&#91;3&#93;&#91;5&#93;&#91;2&#93;",1438,combined cycle&#91;2&#93;,2032,,
+"Harrison power station","Harrison_Power_Station","4",WV,Harrison,"Announced&#91;1&#93;","fossil gas: natural gas&#91;1&#93;",2000,unknown,2040,,
+"Harrison power station","Harrison_Power_Station","Unit 1",WV,Harrison,"Operating","coal: bituminous",684,supercritical,1972,2040,
+"Harrison power station","Harrison_Power_Station","Unit 2",WV,Harrison,"Operating","coal: bituminous",684,supercritical,1973,2040,
+"Harrison power station","Harrison_Power_Station","Unit 3",WV,Harrison,"Operating","coal: bituminous",684,supercritical,1974,2040,
+"Homer City Generating Station","Homer_City_Generating_Station","1",PA,Indiana,"Pre-construction&#91;2&#93;&#91;3&#93;&#91;4&#93;&#91;5&#93;&#91;6&#93;","fossil gas: natural gas&#91;1&#93;&#91;5&#93;",628,combined cycle&#91;1&#93;,2026,,
+"Homer City Generating Station","Homer_City_Generating_Station","2",PA,Indiana,"Pre-construction&#91;2&#93;&#91;3&#93;&#91;4&#93;&#91;5&#93;&#91;6&#93;","fossil gas: natural gas&#91;1&#93;&#91;5&#93;",628,combined cycle&#91;1&#93;,2026,,
+"Homer City Generating Station","Homer_City_Generating_Station","3",PA,Indiana,"Pre-construction&#91;2&#93;&#91;3&#93;&#91;4&#93;&#91;5&#93;&#91;6&#93;","fossil gas: natural gas&#91;1&#93;&#91;5&#93;",628,combined cycle&#91;1&#93;,2026,,
+"Homer City Generating Station","Homer_City_Generating_Station","4",PA,Indiana,"Pre-construction&#91;2&#93;&#91;3&#93;&#91;4&#93;&#91;5&#93;&#91;6&#93;","fossil gas: natural gas&#91;1&#93;&#91;5&#93;",628,combined cycle&#91;1&#93;,2026,,
+"Homer City Generating Station","Homer_City_Generating_Station","5",PA,Indiana,"Pre-construction&#91;2&#93;&#91;3&#93;&#91;4&#93;&#91;5&#93;&#91;6&#93;","fossil gas: natural gas&#91;1&#93;&#91;5&#93;",628,combined cycle&#91;1&#93;,2026,,
+"Homer City Generating Station","Homer_City_Generating_Station","6",PA,Indiana,"Pre-construction&#91;2&#93;&#91;3&#93;&#91;4&#93;&#91;5&#93;&#91;6&#93;","fossil gas: natural gas&#91;1&#93;&#91;5&#93;",628,combined cycle&#91;1&#93;,2026,,
+"Homer City Generating Station","Homer_City_Generating_Station","7",PA,Indiana,"Pre-construction&#91;2&#93;&#91;3&#93;&#91;4&#93;&#91;5&#93;&#91;6&#93;","fossil gas: natural gas&#91;1&#93;&#91;5&#93;",628,combined cycle&#91;1&#93;,2026,,
+"Homer City Generating Station","Homer_City_Generating_Station","Unit 1",PA,Indiana,"Retired&#91;8&#93;","coal: bituminous",660,supercritical,1969,,2023
+"Homer City Generating Station","Homer_City_Generating_Station","Unit 2",PA,Indiana,"Retired&#91;8&#93;","coal: bituminous",660,supercritical,1969,,2023
+"Homer City Generating Station","Homer_City_Generating_Station","Unit 3",PA,Indiana,"Retired&#91;8&#93;","coal: bituminous",692,subcritical,1977,,2023
+"Jeffrey Energy Center","Jeffrey_Energy_Center","Unit 1",KS,Pottawatomie,"Operating","coal: subbituminous",720,subcritical,1978,2039,
+"Jeffrey Energy Center","Jeffrey_Energy_Center","Unit 2, timepoint 1",KS,Pottawatomie,"Operating","coal: subbituminous",720,subcritical,1980,2030,
+"Jeffrey Energy Center","Jeffrey_Energy_Center","Unit 2, timepoint 2",KS,Pottawatomie,"Announced&#91;3&#93;&#91;4&#93;","fossil gas: natural gas&#91;3&#93;",720,steam turbine,2030,,
+"Jeffrey Energy Center","Jeffrey_Energy_Center","Unit 3",KS,Pottawatomie,"Operating","coal: subbituminous",720,subcritical,1983,2030,
+"Joppa Steam Plant","Joppa_Steam_Plant","Unit 1",IL,Massac,"Retired","coal: subbituminous",183.3,subcritical,1953,,2022
+"Joppa Steam Plant","Joppa_Steam_Plant","Unit 2",IL,Massac,"Retired","coal: subbituminous",183.3,subcritical,1953,,2022
+"Joppa Steam Plant","Joppa_Steam_Plant","Unit 3",IL,Massac,"Retired","coal: subbituminous",183.3,subcritical,1954,,2022
+"Joppa Steam Plant","Joppa_Steam_Plant","Unit 4",IL,Massac,"Retired","coal: subbituminous",183.3,subcritical,1954,,2022
+"Joppa Steam Plant","Joppa_Steam_Plant","Unit 5",IL,Massac,"Retired","coal: subbituminous",183.3,subcritical,1955,,2022
+"Joppa Steam Plant","Joppa_Steam_Plant","Unit 6",IL,Massac,"Retired","coal: subbituminous",183.3,subcritical,1955,,2022
+"Keystone Generating Station","Keystone_Generating_Station","Unit 1",PA,Armstrong,"Operating","coal: bituminous",936,supercritical,1967,2028,
+"Keystone Generating Station","Keystone_Generating_Station","Unit 2",PA,Armstrong,"Operating","coal: bituminous",936,supercritical,1968,2028,
+"Kingston Fossil Plant","Kingston_Fossil_Plant","Unit 1",TN,Roane,"Operating","coal: bituminous",175,subcritical,1954,2027,
+"Kingston Fossil Plant","Kingston_Fossil_Plant","Unit 2",TN,Roane,"Operating","coal: bituminous",175,subcritical,1954,2027,
+"Kingston Fossil Plant","Kingston_Fossil_Plant","Unit 3",TN,Roane,"Operating","coal: bituminous",175,subcritical,1954,2027,
+"Kingston Fossil Plant","Kingston_Fossil_Plant","Unit 4",TN,Roane,"Operating","coal: bituminous",175,subcritical,1954,2027,
+"Kingston Fossil Plant","Kingston_Fossil_Plant","Unit 5",TN,Roane,"Operating","coal: bituminous",200,subcritical,1955,2027,
+"Kingston Fossil Plant","Kingston_Fossil_Plant","Unit 6",TN,Roane,"Operating","coal: bituminous",200,subcritical,1955,2027,
+"Kingston Fossil Plant","Kingston_Fossil_Plant","Unit 7",TN,Roane,"Operating","coal: bituminous",200,subcritical,1955,2027,
+"Kingston Fossil Plant","Kingston_Fossil_Plant","Unit 8",TN,Roane,"Operating","coal: bituminous",200,subcritical,1955,2027,
+"Kingston Fossil Plant","Kingston_Fossil_Plant","Unit 9",TN,Roane,"Operating","coal: bituminous",200,subcritical,1955,2027,
+"La Cygne Generating Station","La_Cygne_Generating_Station","Unit 1",KS,Linn,"Operating","coal: subbituminous",893,supercritical,1973,2032,
+"La Cygne Generating Station","La_Cygne_Generating_Station","Unit 2",KS,Linn,"Operating","coal: subbituminous",685,subcritical,1977,2039,
+"Leland Olds Station","Leland_Olds_Station","Unit 1",ND,Mercer,"Operating","coal: lignite",216,subcritical,1966,,
+"Leland Olds Station","Leland_Olds_Station","Unit 2",ND,Mercer,"Operating","coal: lignite",440,subcritical,1975,,
+"Limestone Generating Station","Limestone_Generating_Station","Unit 1",TX,Limestone,"Operating","coal: lignite",893,subcritical,1985,,
+"Limestone Generating Station","Limestone_Generating_Station","Unit 2",TX,Limestone,"Operating","coal: lignite",957,subcritical,1986,,
+"Limestone Generating Station","Limestone_Generating_Station","Unit 3",TX,Limestone,"Cancelled","coal: subbituminous",745,supercritical,,,
+"Marshall Steam Station","Marshall_Steam_Station","CT1",NC,Catawba,"Pre-construction&#91;1&#93;&#91;2&#93;&#91;3&#93;&#91;4&#93;","fossil gas: natural gas, fossil liquids: diesel&#91;1&#93;&#91;2&#93;",425,gas turbine&#91;1&#93;&#91;3&#93;,2029,,
+"Marshall Steam Station","Marshall_Steam_Station","CT2",NC,Catawba,"Pre-construction&#91;1&#93;&#91;2&#93;&#91;3&#93;&#91;4&#93;","fossil gas: natural gas, fossil liquids: diesel&#91;1&#93;&#91;2&#93;",425,gas turbine&#91;1&#93;&#91;3&#93;,2029,,
+"Marshall Steam Station","Marshall_Steam_Station","Unit 1",NC,Catawba,"Operating","coal: bituminous, fossil gas: LNG",350,subcritical,1965,2029,
+"Marshall Steam Station","Marshall_Steam_Station","Unit 2",NC,Catawba,"Operating","coal: bituminous, fossil gas: LNG",350,subcritical,1966,2029,
+"Marshall Steam Station","Marshall_Steam_Station","Unit 3",NC,Catawba,"Operating","coal: bituminous, fossil gas: LNG",648,supercritical,1969,2034,
+"Marshall Steam Station","Marshall_Steam_Station","Unit 4",NC,Catawba,"Operating","coal: bituminous, fossil gas: LNG",648,supercritical,1970,2034,
+"Miller Steam Plant","Miller_Steam_Plant","Unit 1",AL,Jefferson,"Operating","coal: subbituminous",705.5,subcritical,1978,,
+"Miller Steam Plant","Miller_Steam_Plant","Unit 2",AL,Jefferson,"Operating","coal: subbituminous",705.5,subcritical,1985,,
+"Miller Steam Plant","Miller_Steam_Plant","Unit 3",AL,Jefferson,"Operating","coal: subbituminous",705.5,subcritical,1989,,
+"Miller Steam Plant","Miller_Steam_Plant","Unit 4",AL,Jefferson,"Operating","coal: subbituminous",705.5,subcritical,1991,,
+"Milton R. Young Station","Milton_R._Young_Station","Unit 1",ND,Oliver,"Operating","coal: lignite",272,subcritical,1970,,
+"Milton R. Young Station","Milton_R._Young_Station","Unit 2",ND,Oliver,"Operating","coal: lignite",495,subcritical,1977,,
+"Monroe Power Plant","Monroe_Power_Plant","Unit 1",MI,,"Operating","coal: bituminous",817.2,supercritical,1971,2032,
+"Monroe Power Plant","Monroe_Power_Plant","Unit 2",MI,,"Operating","coal: bituminous",822.6,supercritical,1973,2032,
+"Monroe Power Plant","Monroe_Power_Plant","Unit 3",MI,,"Operating","coal: bituminous",822.6,supercritical,1973,2028,
+"Monroe Power Plant","Monroe_Power_Plant","Unit 4",MI,,"Operating","coal: bituminous",817.2,supercritical,1974,2028,
+"Naughton Power Plant","Naughton_Power_Plant","Unit 1, timepoint 1",WY,Lincoln,"Operating","coal: subbituminous",192,subcritical,1963,2026,
+"Naughton Power Plant","Naughton_Power_Plant","Unit 1, timepoint 2",WY,Lincoln,"Announced&#91;1&#93;&#91;2&#93;","fossil gas: natural gas&#91;1&#93;",192,steam turbine&#91;4&#93;,2026,2036,
+"Naughton Power Plant","Naughton_Power_Plant","Unit 2, timepoint 1",WY,Lincoln,"Operating","coal: subbituminous",256,subcritical,1968,2026,
+"Naughton Power Plant","Naughton_Power_Plant","Unit 2, timepoint 2",WY,Lincoln,"Announced&#91;2&#93;&#91;1&#93;","fossil gas: natural gas&#91;1&#93;",256,steam turbine&#91;4&#93;,2026,2036,
+"Naughton Power Plant","Naughton_Power_Plant","Unit 3, timepoint 1",WY,Lincoln,"Retired","coal: subbituminous",384,subcritical,1971,,2019
+"Naughton Power Plant","Naughton_Power_Plant","Unit 3, timepoint 2",WY,Lincoln,"Operating&#91;5&#93;","fossil gas: natural gas&#91;5&#93;",384,steam turbine&#91;5&#93;,2021,2029,
+"Navajo Generating Station","Navajo_Generating_Station","Unit 1",AZ,Coconino,"Retired","coal: bituminous",803.1,supercritical,1974,,2019
+"Navajo Generating Station","Navajo_Generating_Station","Unit 2",AZ,Coconino,"Retired","coal: bituminous",803.1,supercritical,1975,,2019
+"Navajo Generating Station","Navajo_Generating_Station","Unit 3",AZ,Coconino,"Retired","coal: bituminous",803.1,supercritical,1976,,2019
+"Newton power station","Newton_Power_Station","Unit 1",IL,Jasper,"Operating","coal: subbituminous",617.4,subcritical,1977,2027,
+"Newton power station","Newton_Power_Station","Unit 2",IL,Jasper,"Retired","coal: subbituminous",617.4,subcritical,1982,,2016
+"Ottumwa Generating Station","Ottumwa_Generating_Station","Unit 1",IA,Wapello,"Operating","coal: subbituminous",725.9,subcritical,1981,,
+"Paradise Fossil Plant","Paradise_Fossil_Plant","4",KY,Muhlenberg,"Operating&#91;2&#93;&#91;3&#93;&#91;4&#93;","fossil gas: natural gas&#91;4&#93;",250,gas turbine&#91;4&#93;&#91;5&#93;,2023,,
+"Paradise Fossil Plant","Paradise_Fossil_Plant","5",KY,Muhlenberg,"Operating&#91;2&#93;&#91;3&#93;&#91;4&#93;&#91;6&#93;","fossil gas: natural gas&#91;4&#93;",250,gas turbine&#91;4&#93;&#91;5&#93;,2023,,
+"Paradise Fossil Plant","Paradise_Fossil_Plant","6",KY,Muhlenberg,"Operating&#91;2&#93;&#91;3&#93;&#91;4&#93;&#91;6&#93;","fossil gas: natural gas&#91;4&#93;",250,gas turbine&#91;4&#93;&#91;5&#93;,2023,,
+"Paradise Fossil Plant","Paradise_Fossil_Plant","CC1",KY,Muhlenberg,"Operating&#91;7&#93;","fossil gas: natural gas&#91;8&#93;",1160,combined cycle&#91;8&#93;,2017,,
+"Paradise Fossil Plant","Paradise_Fossil_Plant","Unit 1",KY,Muhlenberg,"Retired","coal: bituminous",704,subcritical,1963,,2017
+"Paradise Fossil Plant","Paradise_Fossil_Plant","Unit 2",KY,Muhlenberg,"Retired","coal: bituminous",704,subcritical,1963,,2017
+"Paradise Fossil Plant","Paradise_Fossil_Plant","Unit 3",KY,Muhlenberg,"Retired","coal: bituminous",1150.2,supercritical,1970,,2020
+"Petersburg Generating Station","Petersburg_Generating_Station","Unit 1",IN,Pike,"Retired","coal: bituminous",281.6,subcritical,1967,,2021
+"Petersburg Generating Station","Petersburg_Generating_Station","Unit 2",IN,Pike,"Retired&#91;1&#93;","coal: bituminous",523.3,subcritical,1969,,2023
+"Petersburg Generating Station","Petersburg_Generating_Station","Unit 3, timepoint 1",IN,Pike,"Operating","coal: bituminous",670.9,subcritical,1977,2026,
+"Petersburg Generating Station","Petersburg_Generating_Station","Unit 3, timepoint 2",IN,Pike,"Pre-construction&#91;3&#93;&#91;4&#93;","fossil gas: natural gas&#91;3&#93;",670.9,steam turbine&#91;3&#93;,2026,,
+"Petersburg Generating Station","Petersburg_Generating_Station","Unit 4, timepoint 1",IN,Pike,"Operating","coal: bituminous",670.9,subcritical,1986,2026,
+"Petersburg Generating Station","Petersburg_Generating_Station","Unit 4, timepoint 2",IN,Pike,"Pre-construction&#91;4&#93;","fossil gas: natural gas&#91;4&#93;",670.9,steam turbine&#91;4&#93;,2026,,
+"Pirkey Power Plant","Pirkey_Power_Plant","GT1",TX,Harrison,"Pre-construction&#91;1&#93;","fossil gas: natural gas&#91;1&#93;",225,gas turbine&#91;1&#93;,2027,,
+"Pirkey Power Plant","Pirkey_Power_Plant","GT2",TX,Harrison,"Pre-construction&#91;1&#93;","fossil gas: natural gas&#91;1&#93;",225,gas turbine&#91;1&#93;,2027,,
+"Pirkey Power Plant","Pirkey_Power_Plant","Unit 1",TX,Harrison,"Retired","coal: lignite",720.8,subcritical,1985,,2023
+"Plant Bowen","Plant_Bowen","10",GA,Bartow,"Pre-construction&#91;1&#93;","fossil gas: natural gas, fossil liquids: fuel oil&#91;1&#93;",,combined cycle&#91;1&#93;,,,
+"Plant Bowen","Plant_Bowen","7",GA,Bartow,"Pre-construction&#91;1&#93;","fossil gas: natural gas, fossil liquids: fuel oil&#91;1&#93;",,combined cycle&#91;1&#93;,,,
+"Plant Bowen","Plant_Bowen","8",GA,Bartow,"Pre-construction&#91;1&#93;","fossil gas: natural gas, fossil liquids: fuel oil&#91;1&#93;",,combined cycle&#91;1&#93;,,,
+"Plant Bowen","Plant_Bowen","9",GA,Bartow,"Pre-construction&#91;1&#93;","fossil gas: natural gas, fossil liquids: fuel oil&#91;1&#93;",,combined cycle&#91;1&#93;,,,
+"Plant Bowen","Plant_Bowen","Unit 1",GA,Bartow,"Operating","coal: bituminous",805.8,supercritical,1971,2038,
+"Plant Bowen","Plant_Bowen","Unit 2",GA,Bartow,"Operating","coal: bituminous",788.8,supercritical,1972,2038,
+"Plant Bowen","Plant_Bowen","Unit 3",GA,Bartow,"Operating","coal: bituminous",952,supercritical,1974,2038,
+"Plant Bowen","Plant_Bowen","Unit 4",GA,Bartow,"Operating","coal: bituminous",952,supercritical,1975,2038,
+"Hammond Steam Generating Station","Plant_Hammond","Unit 1",GA,Floyd,"Retired","coal: bituminous",125,subcritical,1954,,2019
+"Hammond Steam Generating Station","Plant_Hammond","Unit 2",GA,Floyd,"Retired","coal: bituminous",125,subcritical,1954,,2019
+"Hammond Steam Generating Station","Plant_Hammond","Unit 3",GA,Floyd,"Retired","coal: bituminous",125,subcritical,1955,,2019
+"Hammond Steam Generating Station","Plant_Hammond","Unit 4",GA,Floyd,"Retired","coal: bituminous",578,subcritical,1970,,2019
+"Wansley Plant","Plant_Wansley","5A",GA,Heard,"Retired&#91;1&#93;","fossil liquids: fuel oil&#91;1&#93;",52.8,gas turbine&#91;1&#93;,1980,,2022
+"Wansley Plant","Plant_Wansley","Unit 1",GA,Heard,"Retired","coal: bituminous",952,supercritical,1976,,2022
+"Wansley Plant","Plant_Wansley","Unit 2",GA,Heard,"Retired","coal: bituminous",952,supercritical,1978,,2022
+"Pleasant Prairie Power Plant","Pleasant_Prairie_Power_Plant","Unit 1",WI,,"Retired","coal: subbituminous",616.6,subcritical,1980,,2018
+"Pleasant Prairie Power Plant","Pleasant_Prairie_Power_Plant","Unit 2",WI,,"Retired","coal: subbituminous",616.6,subcritical,1985,,2018
+"Pleasants power station","Pleasants_Power_Station","Unit 1",WV,Pleasants,"Operating&#91;1&#93;","coal: bituminous",684,supercritical,1979,,
+"Pleasants power station","Pleasants_Power_Station","Unit 2",WV,Pleasants,"Operating&#91;1&#93;","coal: bituminous",684,supercritical,1980,,
+"Rush Island power station","Rush_Island_Power_Station","Unit 1",MO,Jefferson,"Retired&#91;1&#93;","coal: subbituminous",621,subcritical,1976,,2024
+"Rush Island power station","Rush_Island_Power_Station","Unit 2",MO,Jefferson,"Retired&#91;1&#93;","coal: subbituminous",621,subcritical,1977,,2024
+"San Juan Generating Station","San_Juan_Generating_Station","Unit 1",NM,San Juan,"Retired","coal: subbituminous",369,subcritical,1973,,2022
+"San Juan Generating Station","San_Juan_Generating_Station","Unit 2",NM,San Juan,"Retired","coal: subbituminous",369,subcritical,1976,,2017
+"San Juan Generating Station","San_Juan_Generating_Station","Unit 3",NM,San Juan,"Retired","coal: subbituminous",555,subcritical,1979,,2017
+"San Juan Generating Station","San_Juan_Generating_Station","Unit 4",NM,San Juan,"Retired","coal: subbituminous",555,subcritical,1982,,2022
+"Scherer Steam Generating Station","Scherer_Steam_Generating_Station","Unit 1",GA,Monroe,"Operating","coal: subbituminous",891,subcritical,1982,,
+"Scherer Steam Generating Station","Scherer_Steam_Generating_Station","Unit 2",GA,Monroe,"Operating","coal: subbituminous",891,subcritical,1984,,
+"Scherer Steam Generating Station","Scherer_Steam_Generating_Station","Unit 3",GA,Monroe,"Operating","coal: subbituminous",891,subcritical,1987,2038,
+"Scherer Steam Generating Station","Scherer_Steam_Generating_Station","Unit 4",GA,Monroe,"Retired","coal: subbituminous",891,subcritical,1989,,2021
+"Springerville power station","Springerville_Generating_Station","Unit 1",AZ,Apache,"Operating&#91;1&#93;","coal: subbituminous",424.8,subcritical,1985,2030,
+"Springerville power station","Springerville_Generating_Station","Unit 2",AZ,Apache,"Operating&#91;1&#93;","coal: subbituminous",424.8,subcritical,1990,2030,
+"Springerville power station","Springerville_Generating_Station","Unit 3",AZ,Apache,"Operating","coal: subbituminous",458.1,subcritical,2006,2031,
+"Springerville power station","Springerville_Generating_Station","Unit 4",AZ,Apache,"Operating","coal: subbituminous",458.1,subcritical,2009,2029,
+"Trimble County power station","Trimble_County_Generating_Station","10",KY,Trimble,"Operating&#91;1&#93;","fossil gas: natural gas&#91;1&#93;",199,gas turbine&#91;1&#93;,2004,,
+"Trimble County power station","Trimble_County_Generating_Station","5",KY,Trimble,"Operating&#91;1&#93;","fossil gas: natural gas&#91;1&#93;",199,gas turbine&#91;1&#93;,2002,,
+"Trimble County power station","Trimble_County_Generating_Station","6",KY,Trimble,"Operating&#91;1&#93;","fossil gas: natural gas&#91;1&#93;",199,gas turbine&#91;1&#93;,2002,,
+"Trimble County power station","Trimble_County_Generating_Station","7",KY,Trimble,"Operating&#91;1&#93;","fossil gas: natural gas&#91;1&#93;",199,gas turbine&#91;1&#93;,2004,,
+"Trimble County power station","Trimble_County_Generating_Station","8",KY,Trimble,"Operating&#91;1&#93;","fossil gas: natural gas&#91;1&#93;",199,gas turbine&#91;1&#93;,2004,,
+"Trimble County power station","Trimble_County_Generating_Station","9",KY,Trimble,"Operating&#91;1&#93;","fossil gas: natural gas&#91;1&#93;",199,gas turbine&#91;1&#93;,2004,,
+"Trimble County power station","Trimble_County_Generating_Station","Unit 1",KY,Trimble,"Operating","coal: bituminous",566,subcritical,1990,,
+"Trimble County power station","Trimble_County_Generating_Station","Unit 2",KY,Trimble,"Operating","coal: bituminous",834,supercritical,2011,,
+"Welsh Power Plant","Welsh_Power_Plant","Unit 1, timepoint 1",TX,Titus,"Operating","coal: subbituminous",558,subcritical,1977,2028,
+"Welsh Power Plant","Welsh_Power_Plant","Unit 1, timepoint 2",TX,Titus,"Pre-construction&#91;3&#93;&#91;4&#93;&#91;5&#93;&#91;6&#93;&#91;7&#93;&#91;8&#93;","fossil gas: natural gas&#91;7&#93;",558,steam turbine&#91;9&#93;,2027,,
+"Welsh Power Plant","Welsh_Power_Plant","Unit 2",TX,Titus,"Retired","coal: subbituminous",558,subcritical,1980,,2016
+"Welsh Power Plant","Welsh_Power_Plant","Unit 3, timepoint 1",TX,Titus,"Operating","coal: subbituminous",558,subcritical,1982,2028,
+"Welsh Power Plant","Welsh_Power_Plant","Unit 3, timepoint 2",TX,Titus,"Pre-construction&#91;12&#93;","fossil gas: natural gas&#91;12&#93;",558,steam turbine&#91;12&#93;,2027,,
+"Wyodak Power Plant","Wyodak_Power_Plant","Unit 1",WY,Campbell,"Operating","coal: subbituminous",402.3,subcritical,1978,,

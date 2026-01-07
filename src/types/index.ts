@@ -19,7 +19,7 @@ export interface CapacityFactorSummary {
   fuel_type: string;
   technology_type: 'simple_cycle' | 'combined_cycle' | 'other';
   year: number;
-  season: 'annual' | 'summer' | 'winter';
+  season: Season;
   avg_capacity_factor: number;
   weighted_avg_capacity_factor: number;
   median_capacity_factor: number;
@@ -41,7 +41,7 @@ export interface FilterState {
   fuelType: string;
   year: number;
   technology: 'all' | 'simple_cycle' | 'combined_cycle';
-  season: 'annual' | 'summer' | 'winter';
+  season: Season;
 }
 
 // Stats for the stats cards
@@ -79,12 +79,16 @@ export const FUEL_TYPES = [
 export const SIMPLE_CYCLE_CODES = ['GT'] as const;
 export const COMBINED_CYCLE_CODES = ['CT', 'CA', 'CC', 'CS'] as const;
 
-// Season month mappings
+// Season month mappings (meteorological seasons)
 export const SEASON_MONTHS = {
   annual: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
-  summer: [6, 7, 8],
-  winter: [12, 1, 2],
+  winter: [12, 1, 2],    // Dec, Jan, Feb
+  spring: [3, 4, 5],     // Mar, Apr, May
+  summer: [6, 7, 8],     // Jun, Jul, Aug
+  fall: [9, 10, 11],     // Sep, Oct, Nov
 } as const;
+
+export type Season = 'annual' | 'winter' | 'spring' | 'summer' | 'fall';
 
 // Year range
 export const MIN_YEAR = 2001;
@@ -97,7 +101,7 @@ export const DEFAULT_YEAR = 2024;
 
 // Generator retirement record from joined tables
 export interface RetirementRecord {
-  plant_id_eia: number;
+  plant_id_eia: number | null;
   plant_name_eia: string;
   generator_id: string;
   state: string;
@@ -105,13 +109,27 @@ export interface RetirementRecord {
   city: string | null;
   latitude: number | null;
   longitude: number | null;
-  capacity_mw: number;
+  capacity_mw: number | null;
   fuel_type_code_pudl: string | null;
   operational_status: string;
   planned_generator_retirement_date: string | null;
   generator_retirement_date: string | null;
   extended: boolean;
   original_retirement_date: string | null;
+  // Data source tracking
+  data_sources: ('eia' | 'gem' | 'manual')[];
+  // Separate date fields for comparison
+  eia_retirement_date: string | null;
+  gem_retirement_date: string | null;
+  // Delay tracking
+  delay_months: number | null;
+  delay_years: number | null;
+  original_planned_year: number | null;
+  revised_planned_year: number | null;
+  indefinite_delay: boolean;
+  doe_202c_order: boolean;
+  delay_source: string | null;
+  operator: string | null;
 }
 
 // Retirement filter state

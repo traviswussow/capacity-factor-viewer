@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate-historical-data": "npx ts-node --project tsconfig.scripts.json scripts/generate-historical-data.ts",
+    "refresh-current-year": "npx ts-node --project tsconfig.scripts.json scripts/refresh-current-year.ts",
+    "fetch-eia-data": "npx ts-node --project tsconfig.scripts.json scripts/fetch-eia-data.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.89.0",
@@ -21,9 +24,11 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^17.2.3",
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
     "tailwindcss": "^4",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }
