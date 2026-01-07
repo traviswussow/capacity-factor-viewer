@@ -129,6 +129,7 @@ export interface RetirementRecord {
   indefinite_delay: boolean;
   doe_202c_order: boolean;
   delay_source: string | null;
+  delay_source_url: string | null;
   operator: string | null;
 }
 

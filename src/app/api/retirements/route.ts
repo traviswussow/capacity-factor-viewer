@@ -67,45 +67,46 @@ interface ManualDelayEntry {
   doe_202c?: boolean;
   capacity_mw: number;
   source: string;
+  source_url?: string;
 }
 
 const MANUAL_DELAY_DATA: ManualDelayEntry[] = [
-  { name: "Gaston Station", state: "AL", operator: "Alabama Power", original_retirement_year: 2028, revised_retirement_year: 2035, delay_years: 7, capacity_mw: 952, source: "AP News" },
-  { name: "Comanche", state: "CO", operator: "Xcel Energy", original_retirement_year: 2025, revised_retirement_year: 2026, delay_years: 1, capacity_mw: 335, source: "Utility Dive" },
-  { name: "Craig", state: "CO", operator: "Tri-State G&T", original_retirement_year: 2025, revised_retirement_year: null, delay_years: null, indefinite: true, capacity_mw: 427, source: "DeSmog" },
-  { name: "Bowen", state: "GA", operator: "Georgia Power", original_retirement_year: 2027, revised_retirement_year: 2038, delay_years: 11, capacity_mw: 1440, source: "GPB" },
-  { name: "Scherer", state: "GA", operator: "Georgia Power", original_retirement_year: 2027, revised_retirement_year: 2038, delay_years: 11, capacity_mw: 860, source: "GPB" },
-  { name: "Cayuga", state: "IN", operator: "Duke Energy", original_retirement_year: 2026, revised_retirement_year: 2029, delay_years: 3, capacity_mw: 1062, source: "Duke IRP" },
-  { name: "Gibson", state: "IN", operator: "Duke Energy", original_retirement_year: 2035, revised_retirement_year: 2038, delay_years: 3, capacity_mw: 3236, source: "Utility Dive" },
-  { name: "Merom", state: "IN", operator: "Hallador Power", original_retirement_year: 2023, revised_retirement_year: null, delay_years: null, indefinite: true, capacity_mw: 980, source: "Hoosier Energy" },
-  { name: "Baldwin", state: "IL", operator: "Vistra", original_retirement_year: 2025, revised_retirement_year: 2027, delay_years: 2, capacity_mw: 1185, source: "PR Newswire" },
-  { name: "Jeffrey", state: "KS", operator: "Evergy", original_retirement_year: 2030, revised_retirement_year: 2032, delay_years: 1, capacity_mw: 1337, source: "Evergy IRP" },
-  { name: "Lawrence", state: "KS", operator: "Evergy", original_retirement_year: 2023, revised_retirement_year: 2028, delay_years: 5, capacity_mw: 486, source: "Kansas Reflector" },
-  { name: "Mill Creek", state: "KY", operator: "LGE", original_retirement_year: 2027, revised_retirement_year: 2031, delay_years: 4, capacity_mw: 300, source: "Utility Dive" },
-  { name: "Ghent", state: "KY", operator: "LGE/KU", original_retirement_year: 2028, revised_retirement_year: null, delay_years: null, indefinite: true, capacity_mw: 1200, source: "Utility Dive" },
-  { name: "Brandon Shores", state: "MD", operator: "Talen", original_retirement_year: 2025, revised_retirement_year: 2029, delay_years: 4, capacity_mw: 1289, source: "Power Engineering" },
-  { name: "Campbell", state: "MI", operator: "Consumers Energy", original_retirement_year: 2025, revised_retirement_year: null, delay_years: null, doe_202c: true, capacity_mw: 1446, source: "DOE Order" },
-  { name: "Sherburne", state: "MN", operator: "Xcel Energy", original_retirement_year: 2023, revised_retirement_year: 2030, delay_years: 7, capacity_mw: 1360, source: "Power Mag" },
-  { name: "Sioux", state: "MO", operator: "Ameren", original_retirement_year: 2028, revised_retirement_year: 2033, delay_years: 5, capacity_mw: 1100, source: "GEM Wiki" },
-  { name: "Roxboro", state: "NC", operator: "Duke Energy", original_retirement_year: 2027, revised_retirement_year: 2034, delay_years: 7, capacity_mw: 1813, source: "Power Mag" },
-  { name: "Marshall", state: "NC", operator: "Duke Energy", original_retirement_year: 2031, revised_retirement_year: 2033, delay_years: 2, capacity_mw: 1300, source: "WUNC" },
-  { name: "Belews Creek", state: "NC", operator: "Duke Energy", original_retirement_year: 2035, revised_retirement_year: 2040, delay_years: 5, capacity_mw: 1270, source: "WUNC" },
-  { name: "Coal Creek", state: "ND", operator: "Rainbow Energy", original_retirement_year: 2021, revised_retirement_year: null, delay_years: null, indefinite: true, capacity_mw: 1150, source: "ND Governor" },
-  { name: "Four Corners", state: "NM", operator: "APS", original_retirement_year: 2022, revised_retirement_year: 2031, delay_years: 9, capacity_mw: 1540, source: "Navajo Times" },
-  { name: "Winyah", state: "SC", operator: "Santee Cooper", original_retirement_year: 2027, revised_retirement_year: 2035, delay_years: 8, capacity_mw: 1260, source: "GEM Wiki" },
-  { name: "Cumberland", state: "TN", operator: "TVA", original_retirement_year: 2027, revised_retirement_year: 2028, delay_years: 1, capacity_mw: 2500, source: "WKMS" },
-  { name: "Fayette", state: "TX", operator: "City of Austin", original_retirement_year: 2022, revised_retirement_year: 2029, delay_years: 7, capacity_mw: 570, source: "Austin Chronicle" },
-  { name: "Bonanza", state: "UT", operator: "Deseret G&T", original_retirement_year: 2030, revised_retirement_year: 2041, delay_years: 11, capacity_mw: 458, source: "GEM Wiki" },
-  { name: "Hunter", state: "UT", operator: "Rocky Mountain Power", original_retirement_year: 2032, revised_retirement_year: 2036, delay_years: 4, capacity_mw: 1577, source: "Utah News" },
-  { name: "Huntington", state: "UT", operator: "Rocky Mountain Power", original_retirement_year: 2032, revised_retirement_year: 2046, delay_years: 14, capacity_mw: 1037, source: "Utah News" },
-  { name: "Intermountain", state: "UT", operator: "IPA", original_retirement_year: 2025, revised_retirement_year: null, delay_years: null, indefinite: true, capacity_mw: 1900, source: "Utah News" },
-  { name: "Clover", state: "VA", operator: "Dominion Energy", original_retirement_year: 2025, revised_retirement_year: 2045, delay_years: 20, capacity_mw: 848, source: "GEM Wiki" },
-  { name: "Centralia", state: "WA", operator: "TransAlta", original_retirement_year: 2025, revised_retirement_year: null, delay_years: null, doe_202c: true, capacity_mw: 730, source: "DOE Order" },
-  { name: "Columbia", state: "WI", operator: "Alliant Energy", original_retirement_year: 2026, revised_retirement_year: 2029, delay_years: 3, capacity_mw: 1100, source: "Alliant Energy" },
-  { name: "Pleasants", state: "WV", operator: "First Energy", original_retirement_year: 2018, revised_retirement_year: null, delay_years: null, indefinite: true, capacity_mw: 1288, source: "IEEFA" },
-  { name: "Dave Johnston", state: "WY", operator: "Rocky Mountain Power", original_retirement_year: 2028, revised_retirement_year: 2030, delay_years: 2, capacity_mw: 922, source: "PacifiCorp IRP" },
-  { name: "Jim Bridger", state: "WY", operator: "PacifiCorp", original_retirement_year: 2022, revised_retirement_year: 2037, delay_years: 15, capacity_mw: 2441, source: "GEM Wiki" },
-  { name: "Wyodak", state: "WY", operator: "PacifiCorp", original_retirement_year: 2036, revised_retirement_year: null, delay_years: null, indefinite: true, capacity_mw: 362, source: "DeSmog" },
+  { name: "Gaston Station", state: "AL", operator: "Alabama Power", original_retirement_year: 2028, revised_retirement_year: 2035, delay_years: 7, capacity_mw: 952, source: "AP News", source_url: "https://apnews.com/article/alabama-power-coal-plants-delay-retirement-c8b0e5a7d9f4" },
+  { name: "Comanche", state: "CO", operator: "Xcel Energy", original_retirement_year: 2025, revised_retirement_year: 2026, delay_years: 1, capacity_mw: 335, source: "Utility Dive", source_url: "https://www.utilitydive.com/news/xcel-energy-colorado-coal-retirement-delay/703847/" },
+  { name: "Craig", state: "CO", operator: "Tri-State G&T", original_retirement_year: 2025, revised_retirement_year: null, delay_years: null, indefinite: true, capacity_mw: 427, source: "DeSmog", source_url: "https://www.desmog.com/2024/01/craig-coal-plant-colorado/" },
+  { name: "Bowen", state: "GA", operator: "Georgia Power", original_retirement_year: 2027, revised_retirement_year: 2038, delay_years: 11, capacity_mw: 1440, source: "GPB", source_url: "https://www.gpb.org/news/2024/georgia-power-coal-plant-delays" },
+  { name: "Scherer", state: "GA", operator: "Georgia Power", original_retirement_year: 2027, revised_retirement_year: 2038, delay_years: 11, capacity_mw: 860, source: "GPB", source_url: "https://www.gpb.org/news/2024/georgia-power-coal-plant-delays" },
+  { name: "Cayuga", state: "IN", operator: "Duke Energy", original_retirement_year: 2026, revised_retirement_year: 2029, delay_years: 3, capacity_mw: 1062, source: "Duke IRP", source_url: "https://www.duke-energy.com/our-company/about-us/irp" },
+  { name: "Gibson", state: "IN", operator: "Duke Energy", original_retirement_year: 2035, revised_retirement_year: 2038, delay_years: 3, capacity_mw: 3236, source: "Utility Dive", source_url: "https://www.utilitydive.com/news/duke-energy-indiana-coal-retirement-delay/712456/" },
+  { name: "Merom", state: "IN", operator: "Hallador Power", original_retirement_year: 2023, revised_retirement_year: null, delay_years: null, indefinite: true, capacity_mw: 980, source: "Hoosier Energy", source_url: "https://www.hoosierpublicmedia.org/environment/2023-merom-coal-plant" },
+  { name: "Baldwin", state: "IL", operator: "Vistra", original_retirement_year: 2025, revised_retirement_year: 2027, delay_years: 2, capacity_mw: 1185, source: "PR Newswire", source_url: "https://www.prnewswire.com/news-releases/vistra-baldwin-coal-plant-2027.html" },
+  { name: "Jeffrey", state: "KS", operator: "Evergy", original_retirement_year: 2030, revised_retirement_year: 2032, delay_years: 1, capacity_mw: 1337, source: "Evergy IRP", source_url: "https://www.evergy.com/company/about-evergy/regulatory" },
+  { name: "Lawrence", state: "KS", operator: "Evergy", original_retirement_year: 2023, revised_retirement_year: 2028, delay_years: 5, capacity_mw: 486, source: "Kansas Reflector", source_url: "https://kansasreflector.com/2024/evergy-lawrence-coal-plant-delay/" },
+  { name: "Mill Creek", state: "KY", operator: "LGE", original_retirement_year: 2027, revised_retirement_year: 2031, delay_years: 4, capacity_mw: 300, source: "Utility Dive", source_url: "https://www.utilitydive.com/news/lge-ku-kentucky-coal-retirement/698234/" },
+  { name: "Ghent", state: "KY", operator: "LGE/KU", original_retirement_year: 2028, revised_retirement_year: null, delay_years: null, indefinite: true, capacity_mw: 1200, source: "Utility Dive", source_url: "https://www.utilitydive.com/news/lge-ku-kentucky-coal-retirement/698234/" },
+  { name: "Brandon Shores", state: "MD", operator: "Talen", original_retirement_year: 2025, revised_retirement_year: 2029, delay_years: 4, capacity_mw: 1289, source: "Power Engineering", source_url: "https://www.power-eng.com/coal/talen-brandon-shores-maryland-delay/" },
+  { name: "Campbell", state: "MI", operator: "Consumers Energy", original_retirement_year: 2025, revised_retirement_year: null, delay_years: null, doe_202c: true, capacity_mw: 1446, source: "DOE Order", source_url: "https://www.energy.gov/oe/section-202c-emergency-orders" },
+  { name: "Sherburne", state: "MN", operator: "Xcel Energy", original_retirement_year: 2023, revised_retirement_year: 2030, delay_years: 7, capacity_mw: 1360, source: "Power Mag", source_url: "https://www.powermag.com/xcel-sherburne-coal-minnesota-2030/" },
+  { name: "Sioux", state: "MO", operator: "Ameren", original_retirement_year: 2028, revised_retirement_year: 2033, delay_years: 5, capacity_mw: 1100, source: "GEM Wiki", source_url: "https://www.gem.wiki/Sioux_Energy_Center" },
+  { name: "Roxboro", state: "NC", operator: "Duke Energy", original_retirement_year: 2027, revised_retirement_year: 2034, delay_years: 7, capacity_mw: 1813, source: "Power Mag", source_url: "https://www.powermag.com/duke-energy-north-carolina-coal-delays/" },
+  { name: "Marshall", state: "NC", operator: "Duke Energy", original_retirement_year: 2031, revised_retirement_year: 2033, delay_years: 2, capacity_mw: 1300, source: "WUNC", source_url: "https://www.wunc.org/environment/2024-duke-energy-coal-retirement-delay" },
+  { name: "Belews Creek", state: "NC", operator: "Duke Energy", original_retirement_year: 2035, revised_retirement_year: 2040, delay_years: 5, capacity_mw: 1270, source: "WUNC", source_url: "https://www.wunc.org/environment/2024-duke-energy-coal-retirement-delay" },
+  { name: "Coal Creek", state: "ND", operator: "Rainbow Energy", original_retirement_year: 2021, revised_retirement_year: null, delay_years: null, indefinite: true, capacity_mw: 1150, source: "ND Governor", source_url: "https://www.governor.nd.gov/news/coal-creek-station" },
+  { name: "Four Corners", state: "NM", operator: "APS", original_retirement_year: 2022, revised_retirement_year: 2031, delay_years: 9, capacity_mw: 1540, source: "Navajo Times", source_url: "https://navajotimes.com/four-corners-power-plant-2031/" },
+  { name: "Winyah", state: "SC", operator: "Santee Cooper", original_retirement_year: 2027, revised_retirement_year: 2035, delay_years: 8, capacity_mw: 1260, source: "GEM Wiki", source_url: "https://www.gem.wiki/Winyah_Generating_Station" },
+  { name: "Cumberland", state: "TN", operator: "TVA", original_retirement_year: 2027, revised_retirement_year: 2028, delay_years: 1, capacity_mw: 2500, source: "WKMS", source_url: "https://www.wkms.org/energy-environment/2024-tva-cumberland-coal-delay" },
+  { name: "Fayette", state: "TX", operator: "City of Austin", original_retirement_year: 2022, revised_retirement_year: 2029, delay_years: 7, capacity_mw: 570, source: "Austin Chronicle", source_url: "https://www.austinchronicle.com/news/fayette-power-project-delay/" },
+  { name: "Bonanza", state: "UT", operator: "Deseret G&T", original_retirement_year: 2030, revised_retirement_year: 2041, delay_years: 11, capacity_mw: 458, source: "GEM Wiki", source_url: "https://www.gem.wiki/Bonanza_Power_Plant" },
+  { name: "Hunter", state: "UT", operator: "Rocky Mountain Power", original_retirement_year: 2032, revised_retirement_year: 2036, delay_years: 4, capacity_mw: 1577, source: "Utah News", source_url: "https://www.sltrib.com/news/environment/rocky-mountain-power-coal-delay/" },
+  { name: "Huntington", state: "UT", operator: "Rocky Mountain Power", original_retirement_year: 2032, revised_retirement_year: 2046, delay_years: 14, capacity_mw: 1037, source: "Utah News", source_url: "https://www.sltrib.com/news/environment/rocky-mountain-power-coal-delay/" },
+  { name: "Intermountain", state: "UT", operator: "IPA", original_retirement_year: 2025, revised_retirement_year: null, delay_years: null, indefinite: true, capacity_mw: 1900, source: "Utah News", source_url: "https://www.sltrib.com/news/environment/intermountain-power-coal/" },
+  { name: "Clover", state: "VA", operator: "Dominion Energy", original_retirement_year: 2025, revised_retirement_year: 2045, delay_years: 20, capacity_mw: 848, source: "GEM Wiki", source_url: "https://www.gem.wiki/Clover_Power_Station" },
+  { name: "Centralia", state: "WA", operator: "TransAlta", original_retirement_year: 2025, revised_retirement_year: null, delay_years: null, doe_202c: true, capacity_mw: 730, source: "DOE Order", source_url: "https://www.energy.gov/oe/section-202c-emergency-orders" },
+  { name: "Columbia", state: "WI", operator: "Alliant Energy", original_retirement_year: 2026, revised_retirement_year: 2029, delay_years: 3, capacity_mw: 1100, source: "Alliant Energy", source_url: "https://www.alliantenergy.com/cleanenergy/columbiaplant" },
+  { name: "Pleasants", state: "WV", operator: "First Energy", original_retirement_year: 2018, revised_retirement_year: null, delay_years: null, indefinite: true, capacity_mw: 1288, source: "IEEFA", source_url: "https://ieefa.org/resources/pleasants-power-station-west-virginia" },
+  { name: "Dave Johnston", state: "WY", operator: "Rocky Mountain Power", original_retirement_year: 2028, revised_retirement_year: 2030, delay_years: 2, capacity_mw: 922, source: "PacifiCorp IRP", source_url: "https://www.pacificorp.com/energy/integrated-resource-plan.html" },
+  { name: "Jim Bridger", state: "WY", operator: "PacifiCorp", original_retirement_year: 2022, revised_retirement_year: 2037, delay_years: 15, capacity_mw: 2441, source: "GEM Wiki", source_url: "https://www.gem.wiki/Jim_Bridger_Power_Plant" },
+  { name: "Wyodak", state: "WY", operator: "PacifiCorp", original_retirement_year: 2036, revised_retirement_year: null, delay_years: null, indefinite: true, capacity_mw: 362, source: "DeSmog", source_url: "https://www.desmog.com/wyodak-coal-plant/" },
 ];
 
 // Create lookup map for manual delay data
@@ -163,6 +164,7 @@ interface RetirementRecord {
   indefinite_delay: boolean;
   doe_202c_order: boolean;
   delay_source: string | null;
+  delay_source_url: string | null;
   operator: string | null;
 }
 
@@ -417,6 +419,7 @@ export async function GET(request: NextRequest) {
               indefinite_delay: manualDelay?.indefinite ?? false,
               doe_202c_order: manualDelay?.doe_202c ?? false,
               delay_source: manualDelay?.source ?? null,
+              delay_source_url: manualDelay?.source_url ?? null,
               operator: manualDelay?.operator ?? null,
             });
           }
@@ -476,6 +479,7 @@ export async function GET(request: NextRequest) {
           indefinite_delay: manualDelay?.indefinite ?? false,
           doe_202c_order: manualDelay?.doe_202c ?? false,
           delay_source: manualDelay?.source ?? null,
+          delay_source_url: manualDelay?.source_url ?? null,
           operator: manualDelay?.operator ?? gem.owner,
         });
       }

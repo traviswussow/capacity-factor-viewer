@@ -250,6 +250,12 @@ export function RetirementTable({ data, loading, page, totalPages, onPageChange 
                 Sources
                 <SortIcon direction={sortDirection} active={sortColumn === 'data_sources'} />
               </th>
+              <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+                PDF Date
+              </th>
+              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Delay Source
+              </th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
@@ -334,6 +340,37 @@ export function RetirementTable({ data, loading, page, totalPages, onPageChange 
                         </span>
                       )}
                     </div>
+                  </td>
+                  <td className="px-4 py-3 text-center text-sm">
+                    {record.original_planned_year && record.revised_planned_year ? (
+                      <span className="text-gray-900">
+                        {record.original_planned_year} → {record.revised_planned_year}
+                      </span>
+                    ) : record.original_planned_year && record.indefinite_delay ? (
+                      <span className="text-gray-900">
+                        {record.original_planned_year} → <span className="text-red-600">TBD</span>
+                      </span>
+                    ) : (
+                      <span className="text-gray-400">—</span>
+                    )}
+                  </td>
+                  <td className="px-4 py-3 text-sm">
+                    {record.delay_source ? (
+                      record.delay_source_url ? (
+                        <a
+                          href={record.delay_source_url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 hover:text-blue-800 hover:underline"
+                        >
+                          {record.delay_source} ↗
+                        </a>
+                      ) : (
+                        <span className="text-gray-900">{record.delay_source}</span>
+                      )
+                    ) : (
+                      <span className="text-gray-400">—</span>
+                    )}
                   </td>
                 </tr>
               );
