@@ -160,9 +160,16 @@ export function RetirementTable({ data, loading, page, totalPages, onPageChange 
                   </td>
                   <td className="px-4 py-3 text-center">
                     {record.extended ? (
-                      <span className="inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full bg-orange-100 text-orange-800">
-                        Yes
-                      </span>
+                      <div>
+                        <span className="inline-flex items-center px-2 py-1 text-xs font-semibold rounded-full bg-orange-100 text-orange-800">
+                          Delayed
+                        </span>
+                        {record.original_retirement_date && (
+                          <div className="text-xs text-gray-500 mt-1">
+                            Was: {formatDate(record.original_retirement_date)}
+                          </div>
+                        )}
+                      </div>
                     ) : (
                       <span className="text-gray-400">—</span>
                     )}

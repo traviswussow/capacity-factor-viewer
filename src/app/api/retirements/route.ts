@@ -101,11 +101,39 @@ export async function GET(request: NextRequest) {
     // Create a map of plant data
     const plantMap = new Map(plants?.map(p => [p.plant_id_eia, p]) || []);
 
+    // Get delay information from changelog table
+    // Find the earliest planned retirement date for each generator
+    // (plantIds already defined above)
+
+    const { data: changelogData } = await supabase
+      .from('core_eia860m__changelog_generators')
+      .select('plant_id_eia, generator_id, planned_generator_retirement_date, report_date')
+      .in('plant_id_eia', plantIds)
+      .not('planned_generator_retirement_date', 'is', null)
+      .order('report_date', { ascending: true });
+
+    // Build map of earliest planned retirement date per generator
+    const earliestRetirementMap = new Map<string, string>();
+    for (const row of changelogData || []) {
+      const key = `${row.plant_id_eia}-${row.generator_id}`;
+      if (!earliestRetirementMap.has(key)) {
+        earliestRetirementMap.set(key, row.planned_generator_retirement_date);
+      }
+    }
+
     // Join the data
     const records = generators
       .filter(g => plantMap.has(g.plant_id_eia))
       .map(g => {
         const plant = plantMap.get(g.plant_id_eia)!;
+        const key = `${g.plant_id_eia}-${g.generator_id}`;
+        const originalDate = earliestRetirementMap.get(key) || null;
+        const currentDate = g.planned_generator_retirement_date;
+
+        // Check if retirement was delayed (current date > original date)
+        const extended = originalDate && currentDate &&
+          new Date(currentDate) > new Date(originalDate);
+
         return {
           plant_id_eia: g.plant_id_eia,
           plant_name_eia: plant.plant_name_eia,
@@ -118,10 +146,10 @@ export async function GET(request: NextRequest) {
           capacity_mw: g.capacity_mw,
           fuel_type_code_pudl: g.fuel_type_code_pudl,
           operational_status: g.operational_status,
-          planned_generator_retirement_date: g.planned_generator_retirement_date,
+          planned_generator_retirement_date: currentDate,
           generator_retirement_date: g.generator_retirement_date,
-          extended: false, // Will be populated in v2 with changelog comparison
-          original_retirement_date: null,
+          extended: extended || false,
+          original_retirement_date: extended ? originalDate : null,
         };
       });
 
