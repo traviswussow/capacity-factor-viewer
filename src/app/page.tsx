@@ -2,6 +2,7 @@
 
 import { useEffect, useState, Suspense } from 'react';
 import { useQueryState, parseAsInteger, parseAsString } from 'nuqs';
+import Link from 'next/link';
 import { FilterPanel, StatsCards, SummaryCharts, ErrorBoundary } from './components';
 import { Stats, DEFAULT_YEAR } from '@/types';
 
@@ -66,9 +67,17 @@ function Dashboard() {
     <main className="min-h-screen p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
         <header className="mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Capacity Factor Viewer
-          </h1>
+          <div className="flex items-center justify-between mb-2">
+            <h1 className="text-3xl font-bold text-gray-900">
+              Capacity Factor Viewer
+            </h1>
+            <Link
+              href="/retirements"
+              className="text-blue-600 hover:text-blue-800 text-sm font-medium"
+            >
+              Plant Retirements &rarr;
+            </Link>
+          </div>
           <p className="text-gray-600">
             Explore capacity factors for power generators across the United States
           </p>
