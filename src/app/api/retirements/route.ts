@@ -11,7 +11,20 @@ export async function GET(request: NextRequest) {
   const offset = (page - 1) * limit;
 
   try {
+    // First, get the most recent report_date (SCD table has historical snapshots)
+    const { data: dateData } = await supabase
+      .from('core_eia860__scd_generators')
+      .select('report_date')
+      .order('report_date', { ascending: false })
+      .limit(1);
+
+    const latestReportDate = dateData?.[0]?.report_date;
+    if (!latestReportDate) {
+      return NextResponse.json({ data: [], pagination: { page, limit, total: 0, totalPages: 0 } });
+    }
+
     // Only get generators with planned retirement that haven't retired yet
+    // Filter by latest report_date to get current state only
     let query = supabase
       .from('core_eia860__scd_generators')
       .select(`
@@ -23,6 +36,7 @@ export async function GET(request: NextRequest) {
         planned_generator_retirement_date,
         generator_retirement_date
       `)
+      .eq('report_date', latestReportDate)
       .not('planned_generator_retirement_date', 'is', null)
       .is('generator_retirement_date', null)
       .order('planned_generator_retirement_date', { ascending: true });
@@ -36,6 +50,7 @@ export async function GET(request: NextRequest) {
     let countQuery = supabase
       .from('core_eia860__scd_generators')
       .select('*', { count: 'exact', head: true })
+      .eq('report_date', latestReportDate)
       .not('planned_generator_retirement_date', 'is', null)
       .is('generator_retirement_date', null);
 
