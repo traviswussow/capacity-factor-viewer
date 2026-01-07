@@ -1,6 +1,10 @@
 'use client';
 
+import { useState, useMemo } from 'react';
 import { RetirementRecord } from '@/types';
+
+type SortColumn = 'plant_name_eia' | 'state' | 'fuel_type_code_pudl' | 'capacity_mw' | 'planned_generator_retirement_date' | 'extended';
+type SortDirection = 'asc' | 'desc';
 
 interface RetirementTableProps {
   data: RetirementRecord[];
@@ -62,7 +66,68 @@ function getRetirementStatus(plannedDate: string | null): { text: string; color:
   return { text: 'Planned', color: 'bg-blue-100 text-blue-800' };
 }
 
+function SortIcon({ direction, active }: { direction: SortDirection; active: boolean }) {
+  return (
+    <span className={`ml-1 inline-block ${active ? 'text-blue-600' : 'text-gray-400'}`}>
+      {direction === 'asc' ? '↑' : '↓'}
+    </span>
+  );
+}
+
 export function RetirementTable({ data, loading, page, totalPages, onPageChange }: RetirementTableProps) {
+  const [sortColumn, setSortColumn] = useState<SortColumn>('planned_generator_retirement_date');
+  const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
+
+  const handleSort = (column: SortColumn) => {
+    if (sortColumn === column) {
+      setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+    } else {
+      setSortColumn(column);
+      setSortDirection('asc');
+    }
+  };
+
+  const sortedData = useMemo(() => {
+    return [...data].sort((a, b) => {
+      let aVal: string | number | boolean | null;
+      let bVal: string | number | boolean | null;
+
+      switch (sortColumn) {
+        case 'plant_name_eia':
+          aVal = a.plant_name_eia?.toLowerCase() ?? '';
+          bVal = b.plant_name_eia?.toLowerCase() ?? '';
+          break;
+        case 'state':
+          aVal = a.state?.toLowerCase() ?? '';
+          bVal = b.state?.toLowerCase() ?? '';
+          break;
+        case 'fuel_type_code_pudl':
+          aVal = a.fuel_type_code_pudl?.toLowerCase() ?? '';
+          bVal = b.fuel_type_code_pudl?.toLowerCase() ?? '';
+          break;
+        case 'capacity_mw':
+          aVal = a.capacity_mw ?? 0;
+          bVal = b.capacity_mw ?? 0;
+          break;
+        case 'planned_generator_retirement_date':
+          aVal = a.planned_generator_retirement_date ?? '';
+          bVal = b.planned_generator_retirement_date ?? '';
+          break;
+        case 'extended':
+          aVal = a.extended ? 1 : 0;
+          bVal = b.extended ? 1 : 0;
+          break;
+        default:
+          return 0;
+      }
+
+      if (aVal < bVal) return sortDirection === 'asc' ? -1 : 1;
+      if (aVal > bVal) return sortDirection === 'asc' ? 1 : -1;
+      return 0;
+    });
+  }, [data, sortColumn, sortDirection]);
+
+  const headerClass = "px-4 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider cursor-pointer hover:bg-gray-100 select-none";
   if (loading) {
     return (
       <div className="bg-white rounded-lg shadow p-6">
@@ -102,31 +167,55 @@ export function RetirementTable({ data, loading, page, totalPages, onPageChange 
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-gray-50">
             <tr>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th
+                className={`${headerClass} text-left`}
+                onClick={() => handleSort('plant_name_eia')}
+              >
                 Plant / Generator
+                <SortIcon direction={sortDirection} active={sortColumn === 'plant_name_eia'} />
               </th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th
+                className={`${headerClass} text-left`}
+                onClick={() => handleSort('state')}
+              >
                 Location
+                <SortIcon direction={sortDirection} active={sortColumn === 'state'} />
               </th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th
+                className={`${headerClass} text-left`}
+                onClick={() => handleSort('fuel_type_code_pudl')}
+              >
                 Fuel Type
+                <SortIcon direction={sortDirection} active={sortColumn === 'fuel_type_code_pudl'} />
               </th>
-              <th className="px-4 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th
+                className={`${headerClass} text-right`}
+                onClick={() => handleSort('capacity_mw')}
+              >
                 Capacity
+                <SortIcon direction={sortDirection} active={sortColumn === 'capacity_mw'} />
               </th>
-              <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th
+                className={`${headerClass} text-left`}
+                onClick={() => handleSort('planned_generator_retirement_date')}
+              >
                 Planned Retirement
+                <SortIcon direction={sortDirection} active={sortColumn === 'planned_generator_retirement_date'} />
               </th>
               <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Timeline
               </th>
-              <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
+              <th
+                className={`${headerClass} text-center`}
+                onClick={() => handleSort('extended')}
+              >
                 Extended?
+                <SortIcon direction={sortDirection} active={sortColumn === 'extended'} />
               </th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
-            {data.map((record, idx) => {
+            {sortedData.map((record, idx) => {
               const timeline = getRetirementStatus(record.planned_generator_retirement_date);
               return (
                 <tr key={`${record.plant_id_eia}-${record.generator_id}-${idx}`} className="hover:bg-gray-50">
