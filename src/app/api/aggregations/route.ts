@@ -47,35 +47,24 @@ async function fallbackQuery(
   seasonMonths: number[],
   primeMoverCodes: string[]
 ) {
-  // Build the aggregation query manually
-  const monthsArray = `{${seasonMonths.join(',')}}`;
-  const primeMoverArray = `{${primeMoverCodes.map(c => `"${c}"`).join(',')}}`;
-
-  // Summary stats query
+  // Use yearly table (monthly table times out due to size)
+  // Note: Yearly data doesn't support seasonal breakdown
   const { data: summaryData, error: summaryError } = await supabase
-    .from('out_eia__monthly_generators')
+    .from('out_eia__yearly_generators')
     .select('capacity_factor, capacity_mw, net_generation_mwh, prime_mover_code, associated_combined_heat_power, report_date')
     .eq('balancing_authority_code_eia', filters.region)
     .eq('fuel_type_code_pudl', filters.fuelType)
-    .gte('report_date', `${filters.year}-01-01`)
-    .lte('report_date', `${filters.year}-12-31`)
+    .eq('report_date', `${filters.year}-01-01`)
     .in('prime_mover_code', primeMoverCodes)
     .not('capacity_factor', 'is', null)
-    .limit(50000); // Limit to avoid timeout
+    .limit(10000);
 
   if (summaryError) {
     console.error('Summary query error:', summaryError);
     return NextResponse.json({ error: 'Failed to fetch data' }, { status: 500 });
   }
 
-  // Filter by season months
-  const filteredData = summaryData?.filter(row => {
-    // Assume report_date is in format YYYY-MM-DD
-    const dateStr = row.report_date as unknown as string;
-    if (!dateStr) return false;
-    const month = new Date(dateStr).getMonth() + 1;
-    return seasonMonths.includes(month);
-  }) ?? [];
+  const filteredData = summaryData ?? [];
 
   // Calculate statistics
   const totalRecords = filteredData.length;
